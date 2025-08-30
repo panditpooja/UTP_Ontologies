@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description" uid="_JqOjUH-yEfCmD5NXOt1L0g" selectedViews="_OKAhUH-yEfCmD5NXOt1L0g" version="15.2.0.202303281325">
+  <semanticResources>build/oml/purl.org/dc/elements/1.1.oml</semanticResources>
+  <semanticResources>build/oml/uaontologies.com/UA_Core/UA_Agent.oml</semanticResources>
+  <semanticResources>build/oml/www.w3.org/2000/01/rdf-schema.oml</semanticResources>
+  <semanticResources>build/oml/uaontologies.com/UA_Foundation/UA_Foundation.oml</semanticResources>
+  <semanticResources>build/oml/www.w3.org/2001/XMLSchema.oml</semanticResources>
+  <semanticResources>build/oml/uaontologies.com/UA_Core/UA_Information.oml</semanticResources>
+  <semanticResources>build/oml/uaontologies.com/UA_Core/UA_Event.oml</semanticResources>
+  <semanticResources>build/oml/uaontologies.com/UA_Core/UA_Location.oml</semanticResources>
+  <semanticResources>build/oml/uaontologies.com/UA_Core/UA_Measurement.oml</semanticResources>
+  <semanticResources>build/oml/uaontologies.com/UA_Core/UA_Ownership.oml</semanticResources>
+  <semanticResources>build/oml/uaontologies.com/UA_Core/UA_Provenance.oml</semanticResources>
+  <semanticResources>build/oml/uaontologies.com/UA_Core/bundle.oml</semanticResources>
+  <semanticResources>build/oml/uaontologies.com/UA_Domain/UA_Acquisition.oml</semanticResources>
+  <semanticResources>build/oml/uaontologies.com/UA_Domain/UA_BayesianNetworks.oml</semanticResources>
+  <semanticResources>build/oml/uaontologies.com/UA_Domain/UA_DataManagement.oml</semanticResources>
+  <semanticResources>build/oml/uaontologies.com/UA_Domain/UA_Software.oml</semanticResources>
+  <semanticResources>build/oml/uaontologies.com/UA_Domain/UA_ProjectManagement.oml</semanticResources>
+  <semanticResources>build/oml/uaontologies.com/UA_Domain/UA_Requirements.oml</semanticResources>
+  <semanticResources>build/oml/uaontologies.com/UA_Domain/UA_Manuf_IFeatures.oml</semanticResources>
+  <semanticResources>build/oml/uaontologies.com/UA_Domain/UA_Manuf_PFeatures.oml</semanticResources>
+  <semanticResources>build/oml/uaontologies.com/UA_Domain/UA_Manuf_Processes.oml</semanticResources>
+  <semanticResources>build/oml/uaontologies.com/UA_Domain/UA_Materials.oml</semanticResources>
+  <semanticResources>build/oml/uaontologies.com/UA_Domain/UA_Mission.oml</semanticResources>
+  <semanticResources>build/oml/uaontologies.com/UA_Domain/UA_ModelingAndSimulation.oml</semanticResources>
+  <semanticResources>build/oml/uaontologies.com/UA_Domain/UA_OrbitsAndTrajectories.oml</semanticResources>
+  <semanticResources>build/oml/uaontologies.com/UA_Domain/UA_SystemArchitecture.oml</semanticResources>
+  <semanticResources>build/oml/uaontologies.com/UA_Domain/UA_Test.oml</semanticResources>
+  <semanticResources>build/oml/uaontologies.com/UA_Domain/UA_UseCases.oml</semanticResources>
+  <semanticResources>build/oml/uaontologies.com/UA_Domain/bundle.oml</semanticResources>
+  <semanticResources>build/oml/uaontologies.com/UA_Foundation/bundle.oml</semanticResources>
+  <semanticResources>build/oml/uaontologies.com/UA_Libraries/Dimensions.oml</semanticResources>
+  <semanticResources>build/oml/uaontologies.com/UA_Libraries/SoftwareTools.oml</semanticResources>
+  <semanticResources>build/oml/uaontologies.com/UA_Libraries/Units.oml</semanticResources>
+  <semanticResources>build/oml/uaontologies.com/UA_Libraries/bundle.oml</semanticResources>
+  <semanticResources>build/oml/www.w3.org/1999/02/22-rdf-syntax-ns.oml</semanticResources>
+  <semanticResources>build/oml/www.w3.org/2002/07/owl.oml</semanticResources>
+  <semanticResources>build/oml/www.w3.org/2003/11/swrlb.oml</semanticResources>
+  <semanticResources>src/oml/example.com/project/description/UTP_Description_Configuration.oml</semanticResources>
+  <semanticResources>src/oml/example.com/project/description/UTP_Description_Process.oml</semanticResources>
+  <semanticResources>src/oml/example.com/project/vocabulary/UTP_Process.oml</semanticResources>
+  <semanticResources>src/oml/example.com/project/vocabulary/UTP_Data.oml</semanticResources>
+  <semanticResources>src/oml/example.com/project/vocabulary/UTP_Configuration.oml</semanticResources>
+  <semanticResources>src/oml/example.com/project/description/UTP_Description_Data.oml</semanticResources>
+  <semanticResources>src/oml/example.com/project/description/UTP_Description_Procedure.oml</semanticResources>
+  <semanticResources>src/oml/example.com/project/vocabulary/UTP_Procedure.oml</semanticResources>
+  <semanticResources>src/oml/example.com/project/description/bundle.oml</semanticResources>
+  <semanticResources>src/oml/example.com/project/vocabulary/bundle.oml</semanticResources>
+  <ownedViews xmi:type="viewpoint:DView" uid="_OKAhUH-yEfCmD5NXOt1L0g">
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/io.opencaesar.rosetta.sirius.viewpoint/description/oml.odesign#//@ownedViewpoints[name='Vocabularies']"/>
+  </ownedViews>
+</viewpoint:DAnalysis>

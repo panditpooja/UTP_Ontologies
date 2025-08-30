@@ -1,0 +1,206 @@
+description <http://example.com/project/description/UTP_Description_Process#> as utp_desc_proc {
+
+    uses <http://uaontologies.com/UA_Foundation/UA_Foundation#> as foundation
+    uses <http://uaontologies.com/UA_Core/UA_Agent#> as agent
+    uses <http://example.com/project/vocabulary/UTP_Process#> as utp_process
+    uses <http://uaontologies.com/UA_Core/UA_Information#> as info
+    uses <http://uaontologies.com/UA_Core/UA_Event#> as event
+    extends <http://example.com/project/description/UTP_Description_Data#> as utp_desc_data
+
+    // Test Set 
+    instance catapultFullLaunchTestSuite : utp_process:TestSet [
+        foundation:contains catapultRangeTest
+        foundation:contains catapultMassTest 
+        foundation:contains catapultAccuracyTest
+        agent:hasOutput catapultFullLaunchTestSuiteLog
+    ]
+
+    // Test Cases
+    instance catapultRangeTest : utp_process:TestCase [
+        foundation:contains catapultMeasureRangeSetup
+        foundation:contains catapultMeasureRangeMain
+        foundation:contains catapultMeasureRangeTeardown
+        foundation:isContainedIn catapultFullLaunchTestSuite
+        agent:hasOutput catapultRangeTestLog
+        event:hasParticipant utp_desc_data:catapultShotEventPool
+        event:hasParticipant utp_desc_data:catapultRangeDataPool
+    ]
+
+    instance catapultMassTest : utp_process:TestCase [
+        foundation:contains catapultMassSetup
+        foundation:contains catapultMassMain
+        foundation:contains catapultMassTeardown
+        foundation:isContainedIn catapultFullLaunchTestSuite
+        agent:hasOutput catapultMassTestLog
+        event:hasParticipant utp_desc_data:weighingEventPool
+        event:hasParticipant utp_desc_data:metalBallMassDataPool
+    ]
+
+    instance catapultAccuracyTest : utp_process:TestCase [
+        foundation:contains catapultAccuracySetup
+        foundation:contains catapultAccuracyMain
+        foundation:contains catapultAccuracyTeardown
+        foundation:isContainedIn catapultFullLaunchTestSuite
+        agent:hasOutput catapultAccuracyTestLog
+        event:hasParticipant utp_desc_data:targetSetupPool
+        event:hasParticipant utp_desc_data:catapultAccuracyDataPool
+    ]
+
+    // TestCaseElements and Test Actions
+    instance catapultMeasureRangeSetup : utp_process:TestCaseSetup [
+        foundation:contains catapultLoadProjectile
+        foundation:contains catapultSetProjectileAngle
+        foundation:isContainedIn catapultRangeTest
+    ]
+
+    instance catapultMeasureRangeMain : utp_process:TestCaseMain [
+        foundation:contains catapultLaunchAndMeasure
+        foundation:isContainedIn catapultRangeTest
+    ]
+
+    instance catapultMeasureRangeTeardown : utp_process:TestCaseTeardown [
+        foundation:contains catapultClearField
+        foundation:isContainedIn catapultRangeTest
+    ]
+
+    instance catapultMassSetup : utp_process:TestCaseSetup [
+        foundation:contains placeBallOnScale
+        foundation:isContainedIn catapultMassTest
+    ]
+
+    instance catapultMassMain : utp_process:TestCaseMain [
+        foundation:contains recordMassReading
+        foundation:isContainedIn catapultMassTest
+    ]
+
+    instance catapultMassTeardown : utp_process:TestCaseTeardown [
+        foundation:contains removeBallFromScale
+        foundation:isContainedIn catapultMassTest
+    ]
+
+    instance catapultAccuracySetup : utp_process:TestCaseSetup [
+        foundation:contains catapultSetTargetDistance
+        foundation:contains catapultLoadProjectile // Re-using action
+        foundation:isContainedIn catapultAccuracyTest
+    ]
+
+    instance catapultAccuracyMain : utp_process:TestCaseMain [
+        foundation:contains catapultLaunchAtTarget
+        foundation:isContainedIn catapultAccuracyTest
+    ]
+
+    instance catapultAccuracyTeardown : utp_process:TestCaseTeardown [
+        foundation:contains catapultRetrieveProjectile
+        foundation:isContainedIn catapultAccuracyTest
+    ]
+
+    // --- Test Actions ---
+    instance catapultLoadProjectile : utp_process:TestAction[
+        foundation:isContainedIn catapultMeasureRangeSetup, catapultAccuracySetup
+    ]
+    instance catapultSetProjectileAngle : utp_process:TestAction[
+        foundation:isContainedIn catapultMeasureRangeSetup
+    ]
+    instance catapultLaunchAndMeasure : utp_process:TestAction[
+        foundation:isContainedIn catapultMeasureRangeMain
+    ]
+    instance catapultClearField : utp_process:TestAction[
+        foundation:isContainedIn catapultMeasureRangeTeardown
+    ]
+
+    instance placeBallOnScale : utp_process:TestAction[
+        foundation:isContainedIn catapultMassSetup
+    ]
+    instance recordMassReading : utp_process:TestAction[
+        foundation:isContainedIn catapultMassMain
+    ]
+    instance removeBallFromScale : utp_process:TestAction[
+        foundation:isContainedIn catapultMassTeardown
+    ]  
+
+    instance catapultSetTargetDistance : utp_process:TestAction[
+        foundation:isContainedIn catapultAccuracySetup
+    ]
+    instance catapultLaunchAtTarget : utp_process:TestAction[
+        foundation:isContainedIn catapultAccuracyMain
+    ]
+    instance catapultRetrieveProjectile : utp_process:TestAction[
+        foundation:isContainedIn catapultAccuracyTeardown
+    ]
+
+    // Logs 
+    instance catapultFullLaunchTestSuiteLog : utp_process:TestSetLog [
+        info:describes catapultFullLaunchTestSuite
+        foundation:contains catapultRangeTestLog
+        foundation:contains catapultMassTestLog // Renamed
+        foundation:contains catapultAccuracyTestLog
+    ]
+    instance catapultRangeTestLog : utp_process:TestCaseLog [
+        info:describes catapultRangeTest
+        foundation:contains catapultRangeVerdict
+        foundation:isContainedIn catapultFullLaunchTestSuiteLog
+    ]
+    instance catapultMassTestLog : utp_process:TestCaseLog [ // Renamed
+        info:describes catapultMassTest
+        foundation:contains catapultMassVerdict
+        foundation:isContainedIn catapultFullLaunchTestSuiteLog
+    ]
+    instance catapultAccuracyTestLog : utp_process:TestCaseLog [
+        info:describes catapultAccuracyTest
+        foundation:contains catapultAccuracyVerdict
+        foundation:isContainedIn catapultFullLaunchTestSuiteLog
+    ]
+
+    // Log Structures 
+    instance catapultFullLaunchLogStructure : utp_process:TestSetLogStructure [
+        info:prescribes catapultFullLaunchTestSuiteLog
+    ]
+    instance catapultRangeLogStructure : utp_process:TestCaseLogStructure [
+        info:prescribes catapultRangeTestLog
+    ]
+    instance catapultMassLogStructure : utp_process:TestCaseLogStructure [ // Renamed
+        info:prescribes catapultMassTestLog
+    ]
+    instance catapultAccuracyLogStructure : utp_process:TestCaseLogStructure [
+        info:prescribes catapultAccuracyTestLog
+    ]
+
+    // Verdicts 
+    instance catapultRangeVerdict : utp_process:PassVerdict [
+        info:describes catapultRangeTest
+        foundation:isContainedIn catapultRangeTestLog
+        utp_process:hasVerdictValue "Pass"
+    ]
+    instance catapultMassVerdict : utp_process:FailVerdict [
+        info:describes catapultMassTest
+        foundation:isContainedIn catapultMassTestLog
+        utp_process:hasVerdictValue "Fail"
+    ]
+    instance catapultAccuracyVerdict : utp_process:NoneVerdict [
+        info:describes catapultAccuracyTest
+        foundation:isContainedIn catapultAccuracyTestLog
+        utp_process:hasVerdictValue "None"
+    ]
+
+    // Arbitration Specifications
+    instance catapultRangeTestArbitrationSpecification : utp_process:TestCaseArbitrationSpecification [
+        info:prescribes catapultRangeTestVerdictCalc
+    ]
+    instance catapultMassTestArbitrationSpecification : utp_process:TestCaseArbitrationSpecification [ // Renamed
+        info:prescribes catapultMassTestVerdictCalc
+    ]
+    instance catapultAccuracyTestArbitrationSpecification : utp_process:TestCaseArbitrationSpecification [
+        info:prescribes catapultAccuracyTestVerdictCalc
+    ]
+
+    // Verdict Calculations
+    instance catapultRangeTestVerdictCalc : utp_process:VerdictCalculationProcess [
+        agent:hasOutput catapultRangeVerdict
+    ]
+    instance catapultMassTestVerdictCalc : utp_process:VerdictCalculationProcess [ // Renamed
+        agent:hasOutput catapultMassVerdict
+    ]
+    instance catapultAccuracyTestVerdictCalc : utp_process:VerdictCalculationProcess [
+        agent:hasOutput catapultAccuracyVerdict
+    ]
+}

@@ -1,0 +1,181 @@
+@dc:creator "SIE Disruption Lab"
+@dc:contributor "Joe Gregory"
+@dc:description "A vocabulary to capture the measurement patterns required by the SIE Disruption Lab. Note that this is essentially a simplified Measurement CCO."
+@dc:hasVersion "0.1"
+vocabulary <http://uaontologies.com/UA_Core/UA_Measurement#> as UA_Measurement {
+	
+	////////////////////////////////////////////////////////////////////////////////////
+	
+	/////// Vocabulary Imports ///////
+	
+	
+	// Import standard vocabularies	
+	
+    extends <http://purl.org/dc/elements/1.1/> as dc
+    extends <http://www.w3.org/2000/01/rdf-schema#> as rdfs
+    extends <http://www.w3.org/2001/XMLSchema#> as xsd
+    
+    // Import relevant vocabularies
+    
+    extends <http://uaontologies.com/UA_Foundation/UA_Foundation#> as foundation
+	
+	extends <http://uaontologies.com/UA_Core/UA_Information#> as info
+	//extends <http://uaontologies.com/UA_Core/UA_Event#> as event
+	//extends <http://uaontologies.com/UA_Core/UA_Agent#> as agent
+	
+	
+	///////////////////////////////////////////////////////////////////////////////////
+	
+	/////// Vocabulary Definitions ///////
+	
+	///// Aspects
+	
+	
+	
+	
+	///// Concepts
+	
+	@rdfs:label "Dimension"
+	@dc:description "A [=Dimension=]..."
+	concept Dimension < foundation:IdentifiedEntity
+	// NOTE - this is not yet properly categorized under BFO
+	
+	@rdfs:label "Quantity"
+	@dc:description "A [=Quantity=]..."
+	concept Quantity < foundation:Quality [
+		restricts some hasDimension to Dimension
+	]
+	
+	@rdfs:label "Measurement"
+	@dc:description "A [=Measurement=]..."
+	concept Measurement < info:DescriptiveInformationEntity [
+		restricts some hasUnit to Unit
+		restricts some measurementOf to Quantity
+	]
+	
+	@rdfs:label "Unit"
+	@dc:description "A [=Unit=]..."
+	concept Unit < info:DescriptiveInformationEntity [
+		restricts some hasApplicableDimension to Dimension
+	]
+	
+	@rdfs:label "Simple Measurement"
+	@dc:description "A [=SimpleMeasurement=]..."
+	concept SimpleMeasurement < Measurement
+	
+	@rdfs:label "Range"
+	@dc:description "A [=Range=]..."
+	concept Range < Measurement
+	
+	@rdfs:label "Confidence Interval"
+	@dc:description "A [=ConfidenceInterval=]..."
+	concept ConfidenceInterval < Range
+	
+
+	
+	///// Relations	
+	
+	@rdfs:label "Has Dimension"
+	@dc:description "[=HasDimension=] is a..."
+	relation entity HasDimension [
+		from Quantity
+		to Dimension
+		@rdfs:label "has dimension"
+		forward hasDimension
+		@rdfs:label "is dimension of"
+		reverse isDimensionOf
+		asymmetric
+		irreflexive
+	]
+	
+	@rdfs:label "Has Applicable Dimension"
+	@dc:description "[=HasApplicableDimension=] is a..."
+	relation entity HasApplicableDimension [
+		from Unit
+		to Dimension
+		@rdfs:label "has applicable dimension"
+		forward hasApplicableDimension
+		@rdfs:label "is applicable dimension of"
+		reverse isApplicableDimensionOf
+		asymmetric
+		irreflexive
+	]
+	< info:Describes 
+	
+	@rdfs:label "Has Unit"
+	@dc:description "[=HasUnit=] is a..."
+	relation entity HasUnit [
+		from Measurement
+		to Unit
+		@rdfs:label "has unit"
+		forward hasUnit
+		@rdfs:label "is unit of"
+		reverse isUnitOf
+		asymmetric
+		irreflexive
+	]
+	
+	@rdfs:label "Measurement Of"
+	@dc:description "[=MeasurementOf=] is a..."
+	relation entity MeasurementOf [
+		from Measurement
+		to Quantity
+		@rdfs:label "measurement of"
+		forward measurementOf
+		@rdfs:label "measured by"
+		reverse measuredBy
+		asymmetric
+		irreflexive
+	]
+	< info:Describes 
+	
+	
+	
+	///// Scalar Properties
+	
+	@rdfs:label "has value"
+	@dc:description "[=hasValue=] ..."
+	scalar property hasValue [
+		domain SimpleMeasurement
+		range rdfs:Literal
+	]
+	
+	@rdfs:label "has Boolean value"
+	@dc:description "[=hasBooleanValue=] ..."
+	scalar property hasBooleanValue [
+		domain SimpleMeasurement
+		range xsd:boolean
+	]
+	< hasValue
+	
+	@rdfs:label "has upper value"
+	@dc:description "[=hasUpperValue=] ..."
+	scalar property hasUpperValue [
+		domain Range
+		range xsd:decimal
+	]
+	
+	@rdfs:label "has lower value"
+	@dc:description "[=hasLowerValue=] ..."
+	scalar property hasLowerValue [
+		domain Range
+		range xsd:decimal
+	]
+	
+	@rdfs:label "has confidence"
+	@dc:description "[=hasConfidence=] ..."
+	scalar property hasConfidence [
+		domain ConfidenceInterval
+		range xsd:decimal // can include a units library later for 'percentage', etc.
+	]
+	
+	
+	
+	///// Redefined Concepts
+	
+	
+	
+	///// Rules
+		
+	
+}

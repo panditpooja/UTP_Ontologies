@@ -1,0 +1,210 @@
+description <http://example.com/project/description/UTP_Description_Data#> as utp_desc_data {
+
+    uses <http://uaontologies.com/UA_Foundation/UA_Foundation#> as foundation
+    uses <http://uaontologies.com/UA_Core/UA_Information#> as info
+    uses <http://uaontologies.com/UA_Core/UA_Agent#> as agent 
+    uses <http://example.com/project/vocabulary/UTP_Data#> as utp_data
+    
+    extends <http://example.com/project/description/UTP_Description_Configuration#> as utp_desc_config
+    
+    // Data Partitions
+    instance rangePartition_byAngle : utp_data:DataPartition [
+        foundation:genericallyDependentOn catapultRangeDataPool
+    ]
+    
+    // Partitioning mass data by which ball was weighed
+    instance massPartition_byBall : utp_data:DataPartition [
+        foundation:genericallyDependentOn metalBallMassDataPool
+    ]
+
+    instance accuracyPartition_byDistance : utp_data:DataPartition [
+        foundation:genericallyDependentOn catapultAccuracyDataPool
+    ]
+    
+    // Input Data Pools
+    // Input for Range Test: Shot events (e.g., angle, draw)
+	instance shotEventPool_session : info:DescriptiveInformationEntity [ info:describes catapultShotEventPool ]
+    instance catapultShotEventPool : utp_data:DataPool[
+    	foundation:contains shotEvent_shot1_15deg, shotEvent_shot2_30deg
+    	foundation:hasGenericDependent shotEventPool_session
+    ] 
+
+	instance shot1_15deg_angle : info:DescriptiveInformationEntity[ info:describes shotEvent_shot1_15deg ]
+    instance shot1_15deg_time : info:DescriptiveInformationEntity[ info:describes shotEvent_shot1_15deg ]
+    instance shotEvent_shot1_15deg : utp_data:DataItem [
+        foundation:isContainedIn catapultShotEventPool
+        foundation:hasGenericDependent shot1_15deg_angle, shot1_15deg_time
+    ]
+    
+    instance shot2_30deg_angle : info:DescriptiveInformationEntity[ info:describes shotEvent_shot2_30deg ]
+    instance shot2_30deg_time : info:DescriptiveInformationEntity[ info:describes shotEvent_shot2_30deg ]
+    instance shotEvent_shot2_30deg : utp_data:DataItem [
+        foundation:isContainedIn catapultShotEventPool
+        foundation:hasGenericDependent shot2_30deg_angle, shot2_30deg_time
+    ]
+
+    // Events of weighing the metal balls
+    instance weighingEventPool_session : info:DescriptiveInformationEntity [ info:describes weighingEventPool ]
+    instance weighingEventPool : utp_data:DataPool[
+    	foundation:contains weighingEvent_ball1, weighingEvent_ball2
+    	foundation:hasGenericDependent weighingEventPool_session
+    ] 
+    
+	instance weighingEvent_ball1_time : info:DescriptiveInformationEntity[ info:describes weighingEvent_ball1 ]
+    instance weighingEvent_ball1 : utp_data:DataItem [
+        foundation:isContainedIn weighingEventPool
+        foundation:hasGenericDependent weighingEvent_ball1_time
+    ]
+    
+	instance weighingEvent_ball2_time : info:DescriptiveInformationEntity[ info:describes weighingEvent_ball2 ]
+    instance weighingEvent_ball2 : utp_data:DataItem [
+        foundation:isContainedIn weighingEventPool
+        foundation:hasGenericDependent weighingEvent_ball2_time
+    ]
+
+    // Input for Accuracy Test: Target setup
+    instance targetSetupPool_session : info:DescriptiveInformationEntity [ info:describes targetSetupPool ]
+    instance targetSetupPool : utp_data:DataPool [
+    	foundation:contains targetSetup_10m, targetSetup_15m
+    	foundation:hasGenericDependent targetSetupPool_session
+    ]
+    
+    instance accuracyShot1_target : info:DescriptiveInformationEntity[ info:describes targetSetup_10m ]
+    instance targetSetup_10m : utp_data:DataItem [
+        foundation:isContainedIn targetSetupPool
+        foundation:hasGenericDependent accuracyShot1_target
+    ]
+    
+    instance accuracyShot2_target : info:DescriptiveInformationEntity[ info:describes targetSetup_15m ]
+    instance targetSetup_15m : utp_data:DataItem [
+        foundation:isContainedIn targetSetupPool
+        foundation:hasGenericDependent accuracyShot2_target
+    ]
+    
+    // Output Data Pools
+    // Output of Range Test: Measured distance
+    instance rangeDataPool_session : info:DescriptiveInformationEntity [ info:describes catapultRangeDataPool ]
+    instance catapultRangeDataPool : utp_data:DataPool [
+        foundation:contains rangeShot1_15deg, rangeShot2_30deg
+        foundation:hasGenericDependent rangeDataPool_session
+    ]
+    
+   
+    instance massDataPool_session : info:DescriptiveInformationEntity [ info:describes metalBallMassDataPool ]
+    instance metalBallMassDataPool : utp_data:DataPool [
+        foundation:contains massReading_ball1, massReading_ball2
+        foundation:hasGenericDependent massDataPool_session
+    ]
+    
+    // Output of Accuracy Test: Measured offset from target center
+    instance accuracyDataPool_session : info:DescriptiveInformationEntity [ info:describes catapultAccuracyDataPool ]
+    instance catapultAccuracyDataPool : utp_data:DataPool [
+        foundation:contains accuracyOffsetShot1_at10m, accuracyOffsetShot2_at15m
+        foundation:hasGenericDependent accuracyDataPool_session
+    ]
+    
+    // Range Data Items
+    instance shot1_dist : info:DescriptiveInformationEntity[ info:describes rangeShot1_15deg ]
+    instance rangeShot1_15deg : utp_data:DataItem [
+        foundation:isContainedIn catapultRangeDataPool
+        foundation:hasGenericDependent shot1_dist
+    ]
+    
+    instance shot2_dist : info:DescriptiveInformationEntity[ info:describes rangeShot2_30deg ]   
+    instance rangeShot2_30deg : utp_data:DataItem [
+        foundation:isContainedIn catapultRangeDataPool
+        foundation:hasGenericDependent shot2_dist
+    ]
+
+    instance mass_ball1_grams : info:DescriptiveInformationEntity [ info:describes massReading_ball1 ]
+    instance massReading_ball1 : utp_data:DataItem [
+        foundation:isContainedIn metalBallMassDataPool
+        foundation:hasGenericDependent mass_ball1_grams
+    ]
+
+    instance mass_ball2_grams : info:DescriptiveInformationEntity [ info:describes massReading_ball2 ]
+    instance massReading_ball2 : utp_data:DataItem [
+        foundation:isContainedIn metalBallMassDataPool
+        foundation:hasGenericDependent mass_ball2_grams
+    ]
+
+    // Accuracy Data Items
+    instance accuracyShot1_dx : info:DescriptiveInformationEntity[ info:describes accuracyOffsetShot1_at10m ]
+	instance accuracyShot1_dy : info:DescriptiveInformationEntity[ info:describes accuracyOffsetShot1_at10m ]
+    instance accuracyOffsetShot1_at10m : utp_data:DataItem [
+        foundation:isContainedIn catapultAccuracyDataPool
+        foundation:hasGenericDependent accuracyShot1_dx, accuracyShot1_dy
+    ]
+    
+    instance accuracyShot2_dx : info:DescriptiveInformationEntity[ info:describes accuracyOffsetShot2_at15m ]
+	instance accuracyShot2_dy : info:DescriptiveInformationEntity[ info:describes accuracyOffsetShot2_at15m ] 
+    instance accuracyOffsetShot2_at15m : utp_data:DataItem [
+        foundation:isContainedIn catapultAccuracyDataPool
+        foundation:hasGenericDependent accuracyShot2_dx, accuracyShot2_dy
+    ]
+    
+    // Data Providers
+    instance measurementTapeProvider : utp_data:DataProvider [
+	    agent:hasInput  catapultShotEventPool, targetSetupPool
+	    agent:hasOutput catapultRangeDataPool, catapultAccuracyDataPool
+	    foundation:genericallyDependentOn utp_desc_config:plasticMaterial
+	]
+	
+	instance weighingScaleProvider : utp_data:DataProvider [
+	    agent:hasInput  weighingEventPool
+	    agent:hasOutput metalBallMassDataPool
+	    foundation:genericallyDependentOn utp_desc_config:electronicAndMetalComponents
+	]
+    
+    // Data Specifications
+    instance catapultRangeDataSpec : utp_data:DataSpecification [
+        info:prescribes catapultRangeDataPool
+        utp_data:informs measurementTapeProvider
+        foundation:contains catapultRangeConstraint, catapultRangeDataType
+    ]
+
+    instance metalBallMassDataSpec : utp_data:DataSpecification [
+        info:prescribes metalBallMassDataPool
+        utp_data:informs weighingScaleProvider
+        foundation:contains metalBallMassConstraint, metalBallMassDataType
+    ]
+
+    instance catapultAccuracyDataSpec : utp_data:DataSpecification [
+        info:prescribes catapultAccuracyDataPool
+        utp_data:informs measurementTapeProvider
+        foundation:contains catapultAccuracyConstraint, catapultAccuracyDataType
+    ]
+    
+    // Constraints
+    instance catapultRangeConstraint : utp_data:Constraint [
+        info:prescribes rangeShot1_15deg, rangeShot2_30deg
+        foundation:isContainedIn catapultRangeDataSpec
+    ]
+
+    // Constraint for mass: must be a positive value
+    instance metalBallMassConstraint : utp_data:Constraint [
+        info:prescribes massReading_ball1, massReading_ball2
+        foundation:isContainedIn metalBallMassDataSpec
+    ]
+
+    instance catapultAccuracyConstraint : utp_data:Constraint [
+        info:prescribes accuracyOffsetShot1_at10m, accuracyOffsetShot2_at15m
+        foundation:isContainedIn catapultAccuracyDataSpec
+    ]
+
+    // Data Types
+    instance catapultRangeDataType : utp_data:DataType [
+        info:prescribes rangeShot1_15deg, rangeShot2_30deg
+        foundation:isContainedIn catapultRangeDataSpec
+    ]
+
+    instance metalBallMassDataType : utp_data:DataType [
+        info:prescribes massReading_ball1, massReading_ball2
+        foundation:isContainedIn metalBallMassDataSpec
+    ]
+
+    instance catapultAccuracyDataType : utp_data:DataType [
+        info:prescribes accuracyOffsetShot1_at10m, accuracyOffsetShot2_at15m
+        foundation:isContainedIn catapultAccuracyDataSpec
+    ]
+}

@@ -1,0 +1,23 @@
+vocabulary bundle <http://uaontologies.com/UA_Domain/bundle#> as ^bundle {
+	
+	extends <http://uaontologies.com/UA_Core/bundle#>
+	
+	includes <http://uaontologies.com/UA_Domain/UA_SystemArchitecture#>
+	includes <http://uaontologies.com/UA_Domain/UA_Requirements#>
+	includes <http://uaontologies.com/UA_Domain/UA_ProjectManagement#>
+	includes <http://uaontologies.com/UA_Domain/UA_Test#>
+	includes <http://uaontologies.com/UA_Domain/UA_Software#>
+	includes <http://uaontologies.com/UA_Domain/UA_ModelingAndSimulation#>
+	includes <http://uaontologies.com/UA_Domain/UA_Mission#>
+	includes <http://uaontologies.com/UA_Domain/UA_DataManagement#>
+	includes <http://uaontologies.com/UA_Domain/UA_Acquisition#>
+	includes <http://uaontologies.com/UA_Domain/UA_Materials#>
+	includes <http://uaontologies.com/UA_Domain/UA_BayesianNetworks#>
+	includes <http://uaontologies.com/UA_Domain/UA_OrbitsAndTrajectories#>
+	includes <http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#>
+	includes <http://uaontologies.com/UA_Domain/UA_Manuf_IFeatures#>
+	includes <http://uaontologies.com/UA_Domain/UA_Manuf_Processes#>
+	includes <http://uaontologies.com/UA_Domain/UA_UseCases#>
+	
+	
+}

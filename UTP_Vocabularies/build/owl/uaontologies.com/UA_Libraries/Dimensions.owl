@@ -1,0 +1,301 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://uaontologies.com/UA_Libraries/Dimensions#"
+     xml:base="http://uaontologies.com/UA_Libraries/Dimensions"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:oml="http://opencaesar.io/oml#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:Dimensions="http://uaontologies.com/UA_Libraries/Dimensions#">
+    <owl:Ontology rdf:about="http://uaontologies.com/UA_Libraries/Dimensions">
+        <owl:imports rdf:resource="http://purl.org/dc/elements/1.1"/>
+        <owl:imports rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement"/>
+        <oml:namespace rdf:resource="http://uaontologies.com/UA_Libraries/Dimensions#"/>
+        <oml:prefix>Dimensions</oml:prefix>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Description"/>
+        <dc:contributor>Joe Gregory</dc:contributor>
+        <dc:creator>SIE Disruption Lab</dc:creator>
+        <dc:description>A library description to define relevant Dimensions.</dc:description>
+        <dc:hasVersion>0.1</dc:hasVersion>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://uaontologies.com/UA_Libraries/Dimensions#Acceleration -->
+
+
+    <owl:NamedIndividual rdf:about="http://uaontologies.com/UA_Libraries/Dimensions#Acceleration">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement#Dimension"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uaontologies.com/UA_Libraries/Dimensions#Angle -->
+
+
+    <owl:NamedIndividual rdf:about="http://uaontologies.com/UA_Libraries/Dimensions#Angle">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement#Dimension"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uaontologies.com/UA_Libraries/Dimensions#AngularSpeed -->
+
+
+    <owl:NamedIndividual rdf:about="http://uaontologies.com/UA_Libraries/Dimensions#AngularSpeed">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement#Dimension"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uaontologies.com/UA_Libraries/Dimensions#Area -->
+
+
+    <owl:NamedIndividual rdf:about="http://uaontologies.com/UA_Libraries/Dimensions#Area">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement#Dimension"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uaontologies.com/UA_Libraries/Dimensions#Boolean -->
+
+
+    <owl:NamedIndividual rdf:about="http://uaontologies.com/UA_Libraries/Dimensions#Boolean">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement#Dimension"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uaontologies.com/UA_Libraries/Dimensions#Capacity -->
+
+
+    <owl:NamedIndividual rdf:about="http://uaontologies.com/UA_Libraries/Dimensions#Capacity">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement#Dimension"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uaontologies.com/UA_Libraries/Dimensions#Cost -->
+
+
+    <owl:NamedIndividual rdf:about="http://uaontologies.com/UA_Libraries/Dimensions#Cost">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement#Dimension"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uaontologies.com/UA_Libraries/Dimensions#DataRate -->
+
+
+    <owl:NamedIndividual rdf:about="http://uaontologies.com/UA_Libraries/Dimensions#DataRate">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement#Dimension"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uaontologies.com/UA_Libraries/Dimensions#Density -->
+
+
+    <owl:NamedIndividual rdf:about="http://uaontologies.com/UA_Libraries/Dimensions#Density">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement#Dimension"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uaontologies.com/UA_Libraries/Dimensions#Dimensionless -->
+
+
+    <owl:NamedIndividual rdf:about="http://uaontologies.com/UA_Libraries/Dimensions#Dimensionless">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement#Dimension"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uaontologies.com/UA_Libraries/Dimensions#Efficiency -->
+
+
+    <owl:NamedIndividual rdf:about="http://uaontologies.com/UA_Libraries/Dimensions#Efficiency">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement#Dimension"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uaontologies.com/UA_Libraries/Dimensions#Force -->
+
+
+    <owl:NamedIndividual rdf:about="http://uaontologies.com/UA_Libraries/Dimensions#Force">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement#Dimension"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uaontologies.com/UA_Libraries/Dimensions#Frequency -->
+
+
+    <owl:NamedIndividual rdf:about="http://uaontologies.com/UA_Libraries/Dimensions#Frequency">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement#Dimension"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uaontologies.com/UA_Libraries/Dimensions#Gain -->
+
+
+    <owl:NamedIndividual rdf:about="http://uaontologies.com/UA_Libraries/Dimensions#Gain">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement#Dimension"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uaontologies.com/UA_Libraries/Dimensions#Inertia -->
+
+
+    <owl:NamedIndividual rdf:about="http://uaontologies.com/UA_Libraries/Dimensions#Inertia">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement#Dimension"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uaontologies.com/UA_Libraries/Dimensions#Length -->
+
+
+    <owl:NamedIndividual rdf:about="http://uaontologies.com/UA_Libraries/Dimensions#Length">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement#Dimension"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uaontologies.com/UA_Libraries/Dimensions#Mass -->
+
+
+    <owl:NamedIndividual rdf:about="http://uaontologies.com/UA_Libraries/Dimensions#Mass">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement#Dimension"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uaontologies.com/UA_Libraries/Dimensions#MassFlow -->
+
+
+    <owl:NamedIndividual rdf:about="http://uaontologies.com/UA_Libraries/Dimensions#MassFlow">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement#Dimension"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uaontologies.com/UA_Libraries/Dimensions#Power -->
+
+
+    <owl:NamedIndividual rdf:about="http://uaontologies.com/UA_Libraries/Dimensions#Power">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement#Dimension"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uaontologies.com/UA_Libraries/Dimensions#Probability -->
+
+
+    <owl:NamedIndividual rdf:about="http://uaontologies.com/UA_Libraries/Dimensions#Probability">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement#Dimension"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uaontologies.com/UA_Libraries/Dimensions#Speed -->
+
+
+    <owl:NamedIndividual rdf:about="http://uaontologies.com/UA_Libraries/Dimensions#Speed">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement#Dimension"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uaontologies.com/UA_Libraries/Dimensions#Temperature -->
+
+
+    <owl:NamedIndividual rdf:about="http://uaontologies.com/UA_Libraries/Dimensions#Temperature">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement#Dimension"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uaontologies.com/UA_Libraries/Dimensions#Time -->
+
+
+    <owl:NamedIndividual rdf:about="http://uaontologies.com/UA_Libraries/Dimensions#Time">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement#Dimension"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uaontologies.com/UA_Libraries/Dimensions#Velocity -->
+
+
+    <owl:NamedIndividual rdf:about="http://uaontologies.com/UA_Libraries/Dimensions#Velocity">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement#Dimension"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uaontologies.com/UA_Libraries/Dimensions#Voltage -->
+
+
+    <owl:NamedIndividual rdf:about="http://uaontologies.com/UA_Libraries/Dimensions#Voltage">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement#Dimension"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://uaontologies.com/UA_Libraries/Dimensions#Volume -->
+
+
+    <owl:NamedIndividual rdf:about="http://uaontologies.com/UA_Libraries/Dimensions#Volume">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement#Dimension"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.5.0.2023-01-14T12:41:38Z) https://github.com/owlcs/owlapi/ -->
+
+

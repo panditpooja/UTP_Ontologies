@@ -1,0 +1,461 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://example.com/project/vocabulary/UTP_Procedure#"
+     xml:base="http://example.com/project/vocabulary/UTP_Procedure"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:oml="http://opencaesar.io/oml#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:UTP_Procedure="http://example.com/project/vocabulary/UTP_Procedure#">
+    <owl:Ontology rdf:about="http://example.com/project/vocabulary/UTP_Procedure">
+        <owl:imports rdf:resource="http://example.com/project/vocabulary/UTP_Configuration"/>
+        <owl:imports rdf:resource="http://example.com/project/vocabulary/UTP_Process"/>
+        <owl:imports rdf:resource="http://uaontologies.com/UA_Core/UA_Agent"/>
+        <owl:imports rdf:resource="http://uaontologies.com/UA_Core/UA_Information"/>
+        <owl:imports rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation"/>
+        <oml:namespace rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#"/>
+        <oml:prefix>UTP_Procedure</oml:prefix>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Vocabulary"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://example.com/project/vocabulary/UTP_Procedure#invokes -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.com/project/vocabulary/UTP_Procedure#invokes">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://uaontologies.com/UA_Core/UA_Agent#Procedure"/>
+        <rdfs:range rdf:resource="http://uaontologies.com/UA_Core/UA_Agent#Procedure"/>
+        <oml:relationEntity rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#Invokes"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ForwardRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.com/project/vocabulary/UTP_Procedure#isInvokedBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.com/project/vocabulary/UTP_Procedure#isInvokedBy">
+        <owl:inverseOf rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#invokes"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://uaontologies.com/UA_Core/UA_Agent#Procedure"/>
+        <rdfs:range rdf:resource="http://uaontologies.com/UA_Core/UA_Agent#Procedure"/>
+        <oml:relationBase rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#Invokes"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ReverseRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.com/project/vocabulary/UTP_Procedure#isRunBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.com/project/vocabulary/UTP_Procedure#isRunBy">
+        <owl:inverseOf rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#runsOn"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://example.com/project/vocabulary/UTP_Configuration#TestConfiguration"/>
+        <rdfs:range rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestProcedure"/>
+        <oml:relationBase rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#RunsOn"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ReverseRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.com/project/vocabulary/UTP_Procedure#runsOn -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.com/project/vocabulary/UTP_Procedure#runsOn">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestProcedure"/>
+        <rdfs:range rdf:resource="http://example.com/project/vocabulary/UTP_Configuration#TestConfiguration"/>
+        <oml:relationEntity rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#RunsOn"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ForwardRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://example.com/project/vocabulary/UTP_Procedure#Invokes -->
+
+
+    <owl:Class rdf:about="http://example.com/project/vocabulary/UTP_Procedure#Invokes">
+        <oml:type rdf:resource="http://opencaesar.io/oml#RelationEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com/project/vocabulary/UTP_Procedure#RunsOn -->
+
+
+    <owl:Class rdf:about="http://example.com/project/vocabulary/UTP_Procedure#RunsOn">
+        <oml:type rdf:resource="http://opencaesar.io/oml#RelationEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com/project/vocabulary/UTP_Procedure#TestActionProcedure -->
+
+
+    <owl:Class rdf:about="http://example.com/project/vocabulary/UTP_Procedure#TestActionProcedure">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Core/UA_Agent#Procedure"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Core/UA_Information#prescribes"/>
+                <owl:someValuesFrom rdf:resource="http://example.com/project/vocabulary/UTP_Process#TestAction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#isContainedIn"/>
+                <owl:someValuesFrom rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestProcedureElement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Core/UA_Information#prescribes"/>
+                <owl:allValuesFrom rdf:resource="http://example.com/project/vocabulary/UTP_Process#TestAction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#isContainedIn"/>
+                <owl:allValuesFrom rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestProcedureElement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com/project/vocabulary/UTP_Procedure#TestExecutionSchedule -->
+
+
+    <owl:Class rdf:about="http://example.com/project/vocabulary/UTP_Procedure#TestExecutionSchedule">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Core/UA_Agent#Procedure"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Core/UA_Information#prescribes"/>
+                <owl:someValuesFrom rdf:resource="http://example.com/project/vocabulary/UTP_Process#TestSet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com/project/vocabulary/UTP_Procedure#TestProcedure -->
+
+
+    <owl:Class rdf:about="http://example.com/project/vocabulary/UTP_Procedure#TestProcedure">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Core/UA_Agent#Procedure"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#runsOn"/>
+                <owl:someValuesFrom rdf:resource="http://example.com/project/vocabulary/UTP_Configuration#TestConfiguration"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Core/UA_Information#prescribes"/>
+                <owl:someValuesFrom rdf:resource="http://example.com/project/vocabulary/UTP_Process#TestCase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#contains"/>
+                <owl:someValuesFrom rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestProcedureMain"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#contains"/>
+                <owl:someValuesFrom rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestProcedureSetup"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#contains"/>
+                <owl:someValuesFrom rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestProcedureTeardown"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#contains"/>
+                <owl:allValuesFrom rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestProcedureElement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com/project/vocabulary/UTP_Procedure#TestProcedureElement -->
+
+
+    <owl:Class rdf:about="http://example.com/project/vocabulary/UTP_Procedure#TestProcedureElement">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Core/UA_Agent#Procedure"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#contains"/>
+                <owl:someValuesFrom rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestActionProcedure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#isContainedIn"/>
+                <owl:someValuesFrom rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestProcedure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#contains"/>
+                <owl:allValuesFrom rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestActionProcedure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#isContainedIn"/>
+                <owl:allValuesFrom rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestProcedure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com/project/vocabulary/UTP_Procedure#TestProcedureMain -->
+
+
+    <owl:Class rdf:about="http://example.com/project/vocabulary/UTP_Procedure#TestProcedureMain">
+        <rdfs:subClassOf rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestProcedureElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Core/UA_Information#prescribes"/>
+                <owl:someValuesFrom rdf:resource="http://example.com/project/vocabulary/UTP_Process#TestCaseMain"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Core/UA_Information#prescribes"/>
+                <owl:allValuesFrom rdf:resource="http://example.com/project/vocabulary/UTP_Process#TestCaseMain"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com/project/vocabulary/UTP_Procedure#TestProcedureSetup -->
+
+
+    <owl:Class rdf:about="http://example.com/project/vocabulary/UTP_Procedure#TestProcedureSetup">
+        <rdfs:subClassOf rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestProcedureElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Core/UA_Information#prescribes"/>
+                <owl:someValuesFrom rdf:resource="http://example.com/project/vocabulary/UTP_Process#TestCaseSetup"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Core/UA_Information#prescribes"/>
+                <owl:allValuesFrom rdf:resource="http://example.com/project/vocabulary/UTP_Process#TestCaseSetup"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com/project/vocabulary/UTP_Procedure#TestProcedureTeardown -->
+
+
+    <owl:Class rdf:about="http://example.com/project/vocabulary/UTP_Procedure#TestProcedureTeardown">
+        <rdfs:subClassOf rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestProcedureElement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Core/UA_Information#prescribes"/>
+                <owl:someValuesFrom rdf:resource="http://example.com/project/vocabulary/UTP_Process#TestCaseTeardown"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Core/UA_Information#prescribes"/>
+                <owl:allValuesFrom rdf:resource="http://example.com/project/vocabulary/UTP_Process#TestCaseTeardown"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="urn:swrl:var#r">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#s">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#t">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:label>invokes derivation</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#Invokes"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#r"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://opencaesar.io/oml#hasSource"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#r"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#s"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://opencaesar.io/oml#hasTarget"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#r"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#t"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#invokes"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#s"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#t"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:label>runsOn derivation</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#RunsOn"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#r"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://opencaesar.io/oml#hasSource"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#r"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#s"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://opencaesar.io/oml#hasTarget"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#r"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#t"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#runsOn"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#s"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#t"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.5.0.2023-01-14T12:41:38Z) https://github.com/owlcs/owlapi/ -->
+
+

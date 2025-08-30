@@ -1,0 +1,9 @@
+vocabulary bundle <http://example.com/project/vocabulary/bundle#> as ^bundle {
+	extends <http://uaontologies.com/UA_Foundation/bundle#>
+	extends <http://uaontologies.com/UA_Core/bundle#>
+	
+	includes <http://example.com/project/vocabulary/UTP_Process#> 
+	includes <http://example.com/project/vocabulary/UTP_Procedure#>
+	includes <http://example.com/project/vocabulary/UTP_Data#>
+	includes <http://example.com/project/vocabulary/UTP_Configuration#>
+}

@@ -1,0 +1,73 @@
+vocabulary <http://example.com/project/vocabulary/UTP_Procedure#> as UTP_Procedure {
+	extends <http://uaontologies.com/UA_Foundation/UA_Foundation#> as foundation
+    extends <http://uaontologies.com/UA_Core/UA_Information#> as info
+    extends <http://uaontologies.com/UA_Core/UA_Agent#> as agent
+    extends <http://example.com/project/vocabulary/UTP_Process#> as utp_process
+    extends <http://example.com/project/vocabulary/UTP_Configuration#> as utp_config
+    
+    //Concepts
+    concept TestProcedure < agent:Procedure[
+    	restricts some runsOn to utp_config:TestConfiguration
+    	restricts some info:prescribes to utp_process:TestCase
+    	restricts all foundation:contains to TestProcedureElement
+    	restricts some foundation:contains to TestProcedureSetup
+    	restricts some foundation:contains to TestProcedureMain
+    	restricts some foundation:contains to TestProcedureTeardown
+    ]
+    
+    concept TestProcedureElement < agent:Procedure[
+    	restricts all foundation:isContainedIn to TestProcedure
+    	restricts some foundation:isContainedIn to TestProcedure
+    	restricts all foundation:contains to TestActionProcedure
+    	restricts some foundation:contains to TestActionProcedure
+    ]
+    
+    concept TestProcedureSetup < TestProcedureElement[
+    	restricts all info:prescribes to utp_process:TestCaseSetup
+    	restricts some info:prescribes to utp_process:TestCaseSetup
+    ]
+    
+    concept TestProcedureTeardown < TestProcedureElement[
+    	restricts all info:prescribes to utp_process:TestCaseTeardown
+    	restricts some info:prescribes to utp_process:TestCaseTeardown
+    ]
+    
+    
+    concept TestProcedureMain < TestProcedureElement[
+    	restricts all info:prescribes to utp_process:TestCaseMain
+    	restricts some info:prescribes to utp_process:TestCaseMain
+    ]
+    
+    concept TestExecutionSchedule < agent:Procedure[
+    	restricts some info:prescribes to utp_process:TestSet
+    ]
+    
+    concept TestActionProcedure < agent:Procedure[
+    	restricts all info:prescribes to utp_process:TestAction
+    	restricts some info:prescribes to utp_process:TestAction 
+    	restricts all foundation:isContainedIn to TestProcedureElement
+    	restricts some foundation:isContainedIn to TestProcedureElement
+    ]
+    
+	 // Relations	 
+	 // I think invokes is equivalent to constrainsExecutionOrder
+	 relation entity Invokes[
+	   from agent:Procedure
+	   to agent:Procedure
+	   forward invokes
+	   reverse isInvokedBy
+	   asymmetric
+	   irreflexive
+	 ]
+	 
+	 
+	relation entity RunsOn [
+        from TestProcedure
+        to utp_config:TestConfiguration
+        forward runsOn
+        reverse isRunBy
+        asymmetric
+		irreflexive
+    ]	 
+}	 
+

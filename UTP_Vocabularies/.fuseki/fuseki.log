@@ -1,0 +1,93 @@
+[2025-08-26 18:20:37] Server     INFO  Apache Jena Fuseki 4.6.1
+[2025-08-26 18:20:37] Server     INFO  Configuration file: ../.fuseki.ttl
+[2025-08-26 18:20:37] Server     INFO  Path = /UTP_Vocabularies
+[2025-08-26 18:20:37] Server     INFO  System
+[2025-08-26 18:20:37] Server     INFO    Memory: 1.9 GiB
+[2025-08-26 18:20:37] Server     INFO    Java:   21.0.7
+[2025-08-26 18:20:37] Server     INFO    OS:     Windows 11 10.0 amd64
+[2025-08-26 18:20:37] Server     INFO    PID:    9756
+[2025-08-26 18:20:37] Server     INFO  Start Fuseki (http=3030)
+[2025-08-26 18:20:50] Fuseki     INFO  [1] GET http://localhost:3030/UTP_Vocabularies/sparql?query=select%20?g%20%7B%20graph%20?g%20%7B%20?o%20a%20%3Chttp://www.w3.org/2002/07/owl%23Ontology%3E%20%7D%20%7D
+[2025-08-26 18:20:50] Fuseki     INFO  [1] Query = select ?g { graph ?g { ?o a <http://www.w3.org/2002/07/owl#Ontology> } }
+[2025-08-26 18:20:50] Fuseki     INFO  [1] 200 OK (150 ms)
+[2025-08-26 18:20:50] Fuseki     INFO  [2] PUT http://localhost:3030/UTP_Vocabularies?graph=http://purl.org/dc/elements/1.1
+[2025-08-26 18:20:50] Fuseki     INFO  [3] PUT http://localhost:3030/UTP_Vocabularies?graph=http://uaontologies.com/UA_Foundation/UA_Foundation
+[2025-08-26 18:20:50] Fuseki     INFO  [4] PUT http://localhost:3030/UTP_Vocabularies?graph=http://example.com/project/vocabulary/UTP_Data
+[2025-08-26 18:20:50] Fuseki     INFO  [5] PUT http://localhost:3030/UTP_Vocabularies?graph=http://uaontologies.com/UA_Core/UA_Event
+[2025-08-26 18:20:50] Fuseki     INFO  [6] PUT http://localhost:3030/UTP_Vocabularies?graph=http://uaontologies.com/UA_Core/UA_Measurement
+[2025-08-26 18:20:50] Fuseki     INFO  [7] PUT http://localhost:3030/UTP_Vocabularies?graph=http://uaontologies.com/UA_Foundation/bundle
+[2025-08-26 18:20:50] Fuseki     INFO  [8] PUT http://localhost:3030/UTP_Vocabularies?graph=http://uaontologies.com/UA_Core/bundle
+[2025-08-26 18:20:50] Fuseki     INFO  [9] PUT http://localhost:3030/UTP_Vocabularies?graph=http://uaontologies.com/UA_Core/UA_Agent
+[2025-08-26 18:20:50] Fuseki     INFO  [10] PUT http://localhost:3030/UTP_Vocabularies?graph=http://uaontologies.com/UA_Core/UA_Provenance
+[2025-08-26 18:20:50] Fuseki     INFO  [11] PUT http://localhost:3030/UTP_Vocabularies?graph=http://example.com/project/vocabulary/UTP_Configuration
+[2025-08-26 18:20:50] Fuseki     INFO  [12] PUT http://localhost:3030/UTP_Vocabularies?graph=http://example.com/project/vocabulary/UTP_Procedure
+[2025-08-26 18:20:50] Fuseki     INFO  [13] PUT http://localhost:3030/UTP_Vocabularies?graph=http://example.com/project/vocabulary/UTP_Process
+[2025-08-26 18:20:50] Fuseki     INFO  [14] PUT http://localhost:3030/UTP_Vocabularies?graph=http://example.com/project/description/UTP_Description_Configuration
+[2025-08-26 18:20:50] Fuseki     INFO  [17] PUT http://localhost:3030/UTP_Vocabularies?graph=http://uaontologies.com/UA_Core/UA_Information
+[2025-08-26 18:20:50] Fuseki     INFO  [16] PUT http://localhost:3030/UTP_Vocabularies?graph=http://example.com/project/description/bundle/properties
+[2025-08-26 18:20:50] Fuseki     INFO  [18] PUT http://localhost:3030/UTP_Vocabularies?graph=http://example.com/project/vocabulary/bundle
+[2025-08-26 18:20:50] Fuseki     INFO  [15] PUT http://localhost:3030/UTP_Vocabularies?graph=http://example.com/project/description/UTP_Description_Data
+[2025-08-26 18:20:50] Fuseki     INFO  [19] PUT http://localhost:3030/UTP_Vocabularies?graph=http://uaontologies.com/UA_Core/UA_Location
+[2025-08-26 18:20:50] Fuseki     INFO  [2] Body: Content-Length=4083, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=27 Triples=27 Quads=0
+[2025-08-26 18:20:50] Fuseki     INFO  [2] 201 Created (128 ms)
+[2025-08-26 18:20:50] Fuseki     INFO  [3] Body: Content-Length=45327, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=418 Triples=418 Quads=0
+[2025-08-26 18:20:50] Fuseki     INFO  [3] 201 Created (238 ms)
+[2025-08-26 18:20:50] Fuseki     INFO  [4] Body: Content-Length=23314, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=214 Triples=214 Quads=0
+[2025-08-26 18:20:50] Fuseki     INFO  [4] 201 Created (281 ms)
+[2025-08-26 18:20:50] Fuseki     INFO  [20] PUT http://localhost:3030/UTP_Vocabularies?graph=http://example.com/project/description/UTP_Description_Procedure
+[2025-08-26 18:20:50] Fuseki     INFO  [5] Body: Content-Length=29299, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=273 Triples=273 Quads=0
+[2025-08-26 18:20:50] Fuseki     INFO  [5] 201 Created (318 ms)
+[2025-08-26 18:20:50] Fuseki     INFO  [21] PUT http://localhost:3030/UTP_Vocabularies?graph=http://example.com/project/description/UTP_Description_Process
+[2025-08-26 18:20:50] Fuseki     INFO  [6] Body: Content-Length=32232, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=303 Triples=303 Quads=0
+[2025-08-26 18:20:50] Fuseki     INFO  [6] 201 Created (352 ms)
+[2025-08-26 18:20:50] Fuseki     INFO  [22] PUT http://localhost:3030/UTP_Vocabularies?graph=http://example.com/project/description/bundle/classes
+[2025-08-26 18:20:50] Fuseki     INFO  [7] Body: Content-Length=10818, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=54 Triples=54 Quads=0
+[2025-08-26 18:20:50] Fuseki     INFO  [7] 201 Created (367 ms)
+[2025-08-26 18:20:50] Fuseki     INFO  [23] PUT http://localhost:3030/UTP_Vocabularies?graph=http://example.com/project/description/bundle
+[2025-08-26 18:20:50] Fuseki     INFO  [8] Body: Content-Length=26930, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=163 Triples=163 Quads=0
+[2025-08-26 18:20:50] Fuseki     INFO  [8] 201 Created (386 ms)
+[2025-08-26 18:20:50] Fuseki     INFO  [24] PUT http://localhost:3030/UTP_Vocabularies?graph=http://uaontologies.com/UA_Core/UA_Ownership
+[2025-08-26 18:20:50] Fuseki     INFO  [25] PUT http://localhost:3030/UTP_Vocabularies?graph=http://example.com/project/description/bundle/individuals
+[2025-08-26 18:20:50] Fuseki     INFO  [9] Body: Content-Length=47194, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=457 Triples=457 Quads=0
+[2025-08-26 18:20:50] Fuseki     INFO  [9] 201 Created (425 ms)
+[2025-08-26 18:20:50] Fuseki     INFO  [10] Body: Content-Length=18934, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=166 Triples=166 Quads=0
+[2025-08-26 18:20:50] Fuseki     INFO  [10] 201 Created (445 ms)
+[2025-08-26 18:20:50] Fuseki     INFO  [11] Body: Content-Length=9283, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=85 Triples=85 Quads=0
+[2025-08-26 18:20:50] Fuseki     INFO  [11] 201 Created (459 ms)
+[2025-08-26 18:20:50] Fuseki     INFO  [12] Body: Content-Length=22949, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=213 Triples=213 Quads=0
+[2025-08-26 18:20:50] Fuseki     INFO  [12] 201 Created (480 ms)
+[2025-08-26 18:20:50] Fuseki     INFO  [13] Body: Content-Length=24558, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=245 Triples=245 Quads=0
+[2025-08-26 18:20:50] Fuseki     INFO  [13] 201 Created (495 ms)
+[2025-08-26 18:20:50] Fuseki     INFO  [14] Body: Content-Length=19285, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=121 Triples=121 Quads=0
+[2025-08-26 18:20:50] Fuseki     INFO  [14] 201 Created (510 ms)
+[2025-08-26 18:20:50] Fuseki     INFO  [17] Body: Content-Length=38200, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=357 Triples=357 Quads=0
+[2025-08-26 18:20:50] Fuseki     INFO  [17] 201 Created (531 ms)
+[2025-08-26 18:20:50] Fuseki     INFO  [18] Body: Content-Length=47151, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=320 Triples=320 Quads=0
+[2025-08-26 18:20:50] Fuseki     INFO  [18] 201 Created (560 ms)
+[2025-08-26 18:20:50] Fuseki     INFO  [16] Body: Content-Length=33672, Content-Type=text/turtle, Charset=null => Turtle : Count=356 Triples=356 Quads=0
+[2025-08-26 18:20:50] Fuseki     INFO  [16] 201 Created (591 ms)
+[2025-08-26 18:20:50] Fuseki     INFO  [15] Body: Content-Length=42137, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=292 Triples=292 Quads=0
+[2025-08-26 18:20:50] Fuseki     INFO  [15] 201 Created (611 ms)
+[2025-08-26 18:20:50] Fuseki     INFO  [19] Body: Content-Length=7943, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=65 Triples=65 Quads=0
+[2025-08-26 18:20:50] Fuseki     INFO  [19] 201 Created (624 ms)
+[2025-08-26 18:20:50] Fuseki     INFO  [20] Body: Content-Length=23206, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=150 Triples=150 Quads=0
+[2025-08-26 18:20:50] Fuseki     INFO  [20] 201 Created (370 ms)
+[2025-08-26 18:20:50] Fuseki     INFO  [21] Body: Content-Length=33981, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=228 Triples=228 Quads=0
+[2025-08-26 18:20:50] Fuseki     INFO  [21] 201 Created (352 ms)
+[2025-08-26 18:20:50] Fuseki     INFO  [22] Body: Content-Length=69628, Content-Type=text/turtle, Charset=null => Turtle : Count=872 Triples=872 Quads=0
+[2025-08-26 18:20:50] Fuseki     INFO  [22] 201 Created (353 ms)
+[2025-08-26 18:20:50] Fuseki     INFO  [23] Body: Content-Length=1492, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=9 Triples=9 Quads=0
+[2025-08-26 18:20:50] Fuseki     INFO  [23] 201 Created (347 ms)
+[2025-08-26 18:20:51] Fuseki     INFO  [24] Body: Content-Length=7924, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=66 Triples=66 Quads=0
+[2025-08-26 18:20:51] Fuseki     INFO  [24] 201 Created (340 ms)
+[2025-08-26 18:20:51] Fuseki     INFO  [25] Body: Content-Length=435150, Content-Type=text/turtle, Charset=null => Turtle : Count=4458 Triples=4458 Quads=0
+[2025-08-26 18:20:51] Fuseki     INFO  [25] 201 Created (512 ms)
+[2025-08-26 18:20:51] Fuseki     INFO  [26] POST http://localhost:3030/UTP_Vocabularies/sparql
+[2025-08-26 18:20:51] Fuseki     INFO  [27] GET http://localhost:3030/UTP_Vocabularies/sparql?query=PREFIX%20%20utp_desc_config:%20%3Chttp://example.com/project/description/UTP_Description_Configuration%23%3E%0APREFIX%20%20utp_config:%20%3Chttp://example.com/project/vocabulary/UTP_Configuration%23%3E%0APREFIX%20%20utp_process:%20%3Chttp://example.com/project/vocabulary/UTP_Process%23%3E%0APREFIX%20%20utp_desc_proc:%20%3Chttp://example.com/project/description/UTP_Description_Process%23%3E%0APREFIX%20%20foundation:%20%3Chttp://uaontologies.com/UA_Foundation/UA_Foundation%23%3E%0APREFIX%20%20utp_proc:%20%3Chttp://example.com/project/vocabulary/UTP_Procedure%23%3E%0APREFIX%20%20info:%20%3Chttp://uaontologies.com/UA_Core/UA_Information%23%3E%0A%0ASELECT%20%20?suspectComponent%20%28GROUP_CONCAT%28DISTINCT%20str%28?failedTestCase%29%20%3B%20separator%3D%27%2C%20%27%29%20AS%20?failedTests%29%0AWHERE%0A%20%20%7B%20?failedTestCase%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20utp_process:TestCase%20.%0A%20%20%20%20?log%20%20%20%20%20%20info:describes%20%20%20%20%20%20%20?failedTestCase%20%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20foundation:contains%20%20?verdict%20.%0A%20%20%20%20?verdict%20%20a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20utp_process:FailVerdict%20.%0A%20%20%20%20?proc%20%20%20%20%20info:prescribes%20%20%20%20%20%20?failedTestCase%20%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20utp_proc:runsOn%20%20%20%20%20%20?config%20.%0A%20%20%20%20?config%20%20%20foundation:contains%20%20?compConfig%20.%0A%20%20%20%20?compConfig%20%20info:prescribes%20%20%20?suspectComponent%20.%0A%20%20%20%20?suspectComponent%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20utp_config:TestComponent%0A%20%20%7D%0AGROUP%20BY%20?suspectComponent%0AHAVING%20%28%20COUNT%28DISTINCT%20?failedTestCase%29%20%3E%3D%202%20%29%0A
+[2025-08-26 18:20:51] Fuseki     INFO  [27] Query = PREFIX  utp_desc_config: <http://example.com/project/description/UTP_Description_Configuration#> PREFIX  utp_config: <http://example.com/project/vocabulary/UTP_Configuration#> PREFIX  utp_process: <http://example.com/project/vocabulary/UTP_Process#> PREFIX  utp_desc_proc: <http://example.com/project/description/UTP_Description_Process#> PREFIX  foundation: <http://uaontologies.com/UA_Foundation/UA_Foundation#> PREFIX  utp_proc: <http://example.com/project/vocabulary/UTP_Procedure#> PREFIX  info: <http://uaontologies.com/UA_Core/UA_Information#>  SELECT  ?suspectComponent (GROUP_CONCAT(DISTINCT str(?failedTestCase) ; separator=', ') AS ?failedTests) WHERE   { ?failedTestCase               a                    utp_process:TestCase .     ?log      info:describes       ?failedTestCase ;               foundation:contains  ?verdict .     ?verdict  a                    utp_process:FailVerdict .     ?proc     info:prescribes      ?failedTestCase ;               utp_proc:runsOn      ?config .     ?config   foundation:contains  ?compConfig .     ?compConfig  info:prescribes   ?suspectComponent .     ?suspectComponent               a                    utp_config:TestComponent   } GROUP BY ?suspectComponent HAVING ( COUNT(DISTINCT ?failedTestCase) >= 2 ) 
+[2025-08-26 18:20:51] Fuseki     INFO  [28] GET http://localhost:3030/UTP_Vocabularies/sparql?query=PREFIX%20%20utp_desc_proc:%20%3Chttp://example.com/project/description/UTP_Description_Process%23%3E%0APREFIX%20%20foundation:%20%3Chttp://uaontologies.com/UA_Foundation/UA_Foundation%23%3E%0APREFIX%20%20utp_desc_config:%20%3Chttp://example.com/project/description/UTP_Description_Configuration%23%3E%0APREFIX%20%20utp_config:%20%3Chttp://example.com/project/vocabulary/UTP_Configuration%23%3E%0APREFIX%20%20utp_proc:%20%3Chttp://example.com/project/vocabulary/UTP_Procedure%23%3E%0APREFIX%20%20info:%20%3Chttp://uaontologies.com/UA_Core/UA_Information%23%3E%0A%0ASELECT%20%20?sharedComponent%20?testCase1%20?testCase2%0AWHERE%0A%20%20%7B%20?sharedComponent%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20utp_config:TestComponent%20.%0A%20%20%20%20?proc1%20%20%20%20info:prescribes%20%20%20%20%20%20?testCase1%20%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20utp_proc:runsOn%20%20%20%20%20%20?config1%20.%0A%20%20%20%20?config1%20%20foundation:contains%20%20?compConfig1%20.%0A%20%20%20%20?compConfig1%20%20info:prescribes%20%20?sharedComponent%20.%0A%20%20%20%20?proc2%20%20%20%20info:prescribes%20%20%20%20%20%20?testCase2%20%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20utp_proc:runsOn%20%20%20%20%20%20?config2%20.%0A%20%20%20%20?config2%20%20foundation:contains%20%20?compConfig2%20.%0A%20%20%20%20?compConfig2%20%20info:prescribes%20%20?sharedComponent%0A%20%20%20%20FILTER%20%28%20%28%20?testCase1%20%21%3D%20?testCase2%20%29%20%26%26%20%28%20str%28?testCase1%29%20%3C%20str%28?testCase2%29%20%29%20%29%0A%20%20%7D%0AORDER%20BY%20?sharedComponent%0A
+[2025-08-26 18:20:51] Fuseki     INFO  [26] Query = PREFIX  utp_desc_config: <http://example.com/project/description/UTP_Description_Configuration#> PREFIX  utp_config: <http://example.com/project/vocabulary/UTP_Configuration#> PREFIX  utp_process: <http://example.com/project/vocabulary/UTP_Process#> PREFIX  utp_desc_proc: <http://example.com/project/description/UTP_Description_Process#> PREFIX  foundation: <http://uaontologies.com/UA_Foundation/UA_Foundation#> PREFIX  utp_proc: <http://example.com/project/vocabulary/UTP_Procedure#> PREFIX  info: <http://uaontologies.com/UA_Core/UA_Information#>  SELECT  ?testSet ?testCase ?verdictValue ?requiredEquipment WHERE   { ?testSet  a                     utp_process:TestSet ;               foundation:contains   ?testCase .     ?testCaseLog  info:describes    ?testCase ;               foundation:contains   ?verdict .     ?verdict  utp_process:hasVerdictValue  ?verdictValue     OPTIONAL       { ?verdict  a  ?verdictType         FILTER ( ?verdictType IN (utp_process:NoneVerdict, utp_process:InconclusiveVerdict) )         ?proc     info:prescribes      ?testCase ;                   utp_proc:runsOn      ?config .         ?config   foundation:contains  ?compConfig .         ?compConfig  info:prescribes   ?requiredEquipment .         ?requiredEquipment                   a                    utp_config:TestComponent       }   } ORDER BY ?testSet ?testCase 
+[2025-08-26 18:20:51] Fuseki     INFO  [28] Query = PREFIX  utp_desc_proc: <http://example.com/project/description/UTP_Description_Process#> PREFIX  foundation: <http://uaontologies.com/UA_Foundation/UA_Foundation#> PREFIX  utp_desc_config: <http://example.com/project/description/UTP_Description_Configuration#> PREFIX  utp_config: <http://example.com/project/vocabulary/UTP_Configuration#> PREFIX  utp_proc: <http://example.com/project/vocabulary/UTP_Procedure#> PREFIX  info: <http://uaontologies.com/UA_Core/UA_Information#>  SELECT  ?sharedComponent ?testCase1 ?testCase2 WHERE   { ?sharedComponent               a                    utp_config:TestComponent .     ?proc1    info:prescribes      ?testCase1 ;               utp_proc:runsOn      ?config1 .     ?config1  foundation:contains  ?compConfig1 .     ?compConfig1  info:prescribes  ?sharedComponent .     ?proc2    info:prescribes      ?testCase2 ;               utp_proc:runsOn      ?config2 .     ?config2  foundation:contains  ?compConfig2 .     ?compConfig2  info:prescribes  ?sharedComponent     FILTER ( ( ?testCase1 != ?testCase2 ) && ( str(?testCase1) < str(?testCase2) ) )   } ORDER BY ?sharedComponent 
+[2025-08-26 18:20:51] Fuseki     INFO  [27] 200 OK (118 ms)
+[2025-08-26 18:20:51] Fuseki     INFO  [28] 200 OK (119 ms)
+[2025-08-26 18:20:51] Fuseki     INFO  [26] 200 OK (124 ms)

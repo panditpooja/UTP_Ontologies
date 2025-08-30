@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://uaontologies.com/UA_Domain/UA_Manuf_IFeatures#"
+     xml:base="http://uaontologies.com/UA_Domain/UA_Manuf_IFeatures"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:oml="http://opencaesar.io/oml#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:UA_Manuf_I="http://uaontologies.com/UA_Domain/UA_Manuf_IFeatures#">
+    <owl:Ontology rdf:about="http://uaontologies.com/UA_Domain/UA_Manuf_IFeatures">
+        <owl:imports rdf:resource="http://purl.org/dc/elements/1.1"/>
+        <owl:imports rdf:resource="http://uaontologies.com/UA_Core/UA_Information"/>
+        <owl:imports rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement"/>
+        <owl:imports rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures"/>
+        <owl:imports rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation"/>
+        <oml:namespace rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_IFeatures#"/>
+        <oml:prefix>UA_Manuf_I</oml:prefix>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Vocabulary"/>
+        <dc:contributor>Joe Gregory</dc:contributor>
+        <dc:creator>SIE Disruption Lab</dc:creator>
+        <dc:description>A vocabulary to capture manufacturing information</dc:description>
+        <dc:hasVersion>0.1</dc:hasVersion>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://uaontologies.com/UA_Domain/UA_Manuf_IFeatures#IFeature -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Domain/UA_Manuf_IFeatures#IFeature">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Core/UA_Information#DescriptiveInformationEntity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Core/UA_Information#describes"/>
+                <owl:someValuesFrom rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#PFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Core/UA_Information#describes"/>
+                <owl:allValuesFrom rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#PFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Domain/UA_Manuf_IFeatures#WeldSymbol -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Domain/UA_Manuf_IFeatures#WeldSymbol">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_IFeatures#IFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Core/UA_Information#describes"/>
+                <owl:someValuesFrom rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#Weld"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#contains"/>
+                <owl:someValuesFrom rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_IFeatures#WeldSymbol_WeldFinish"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#contains"/>
+                <owl:someValuesFrom rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_IFeatures#WeldSymbol_WeldIntermittance"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#contains"/>
+                <owl:someValuesFrom rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_IFeatures#WeldSymbol_WeldSize"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Core/UA_Information#describes"/>
+                <owl:allValuesFrom rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#Weld"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Domain/UA_Manuf_IFeatures#WeldSymbol_WeldFinish -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Domain/UA_Manuf_IFeatures#WeldSymbol_WeldFinish">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement#SimpleMeasurement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement#measurementOf"/>
+                <owl:someValuesFrom rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#WeldFinish"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Domain/UA_Manuf_IFeatures#WeldSymbol_WeldIntermittance -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Domain/UA_Manuf_IFeatures#WeldSymbol_WeldIntermittance">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement#SimpleMeasurement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement#measurementOf"/>
+                <owl:someValuesFrom rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#WeldIntermittance"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Domain/UA_Manuf_IFeatures#WeldSymbol_WeldSize -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Domain/UA_Manuf_IFeatures#WeldSymbol_WeldSize">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement#SimpleMeasurement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement#measurementOf"/>
+                <owl:someValuesFrom rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#WeldSize"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.5.0.2023-01-14T12:41:38Z) https://github.com/owlcs/owlapi/ -->
+
+

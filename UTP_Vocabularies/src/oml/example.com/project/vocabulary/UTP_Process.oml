@@ -1,0 +1,116 @@
+vocabulary <http://example.com/project/vocabulary/UTP_Process#> as UTP_Process {
+
+    extends <http://uaontologies.com/UA_Foundation/UA_Foundation#> as foundation
+    extends <http://uaontologies.com/UA_Core/UA_Information#> as info
+    extends <http://uaontologies.com/UA_Core/UA_Agent#> as agent
+	extends <http://www.w3.org/2002/07/owl#> as owl
+	extends <http://uaontologies.com/UA_Core/UA_Event#> as event
+	extends <http://example.com/project/vocabulary/UTP_Data#> as utp_data
+	extends <http://www.w3.org/2001/XMLSchema#> as xsd
+    
+    // Concepts
+    concept TestSet < foundation:Process[
+    	restricts all foundation:contains to TestCase
+    	restricts some foundation:contains to TestCase
+    	restricts all agent:hasOutput to TestSetLog
+	    restricts some agent:hasOutput to TestSetLog		
+    ]
+    
+    concept TestCase < foundation:Process[
+    	restricts all foundation:contains to TestCaseElement
+    	restricts some foundation:contains to TestCaseSetup
+    	restricts some foundation:contains to TestCaseMain
+    	restricts some foundation:contains to TestCaseTeardown
+    	restricts all foundation:isContainedIn to TestSet
+    	restricts some foundation:isContainedIn to TestSet
+    	restricts all agent:hasOutput to TestCaseLog
+	    restricts some agent:hasOutput to TestCaseLog
+	    restricts all event:hasParticipant to utp_data:DataPool
+	    restricts some event:hasParticipant to utp_data:DataPool
+    	
+    ]
+    
+    concept TestCaseElement < foundation:Process [
+    	restricts all foundation:isContainedIn to TestCase
+    	restricts some foundation:isContainedIn to TestCase
+    	restricts all foundation:contains to TestAction
+    	restricts some foundation:contains to TestAction
+    ]
+    
+    concept TestCaseSetup < TestCaseElement
+    
+    concept TestCaseMain < TestCaseElement
+    
+    concept TestCaseTeardown < TestCaseElement
+   
+    concept TestAction < foundation:Process[
+    	restricts all foundation:contains to owl:Nothing
+    	restricts all foundation:isContainedIn to TestCaseElement
+    	restricts some foundation:isContainedIn to TestCaseElement
+    	
+    ]
+    
+    concept Verdict < info:DescriptiveInformationEntity[
+    	restricts all info:describes to TestCase
+    	restricts some info:describes to TestCase
+    	restricts all foundation:isContainedIn to TestCaseLog  
+    	restricts some foundation:isContainedIn to TestCaseLog  	
+    ]
+    
+    concept PassVerdict < Verdict
+    
+    concept FailVerdict < Verdict
+    
+    //Need to define NoneVerdict Concept correctly here
+    concept NoneVerdict < Verdict
+    
+    concept ErrorVerdict < Verdict
+    
+    concept InconclusiveVerdict < Verdict
+
+    // VerdictCalculationProcess is a specialized process that only produces Verdicts.
+	// It contains no sub-elements or steps within its internal structure.
+	// 'owl:Nothing' ensures that no other entities can be contained within it.
+	concept VerdictCalculationProcess < foundation:Process [
+	    restricts all agent:hasOutput to Verdict
+	    restricts some agent:hasOutput to Verdict
+	    restricts all foundation:contains to owl:Nothing
+	]
+    
+    concept TestCaseArbitrationSpecification < info:PrescriptiveInformationEntity[
+    	restricts all info:prescribes to VerdictCalculationProcess
+    	restricts some info:prescribes to VerdictCalculationProcess
+    ]
+
+    concept TestSetLogStructure < info:PrescriptiveInformationEntity[
+    	restricts all info:prescribes to TestSetLog
+    	restricts some info:prescribes to TestSetLog
+    ]
+
+    concept TestCaseLogStructure < info:PrescriptiveInformationEntity[
+    	restricts all info:prescribes to TestCaseLog
+    	restricts some info:prescribes to TestCaseLog
+    ]
+   
+	concept TestSetLog < info:DescriptiveInformationEntity[
+		restricts all info:describes to TestSet
+		restricts some info:describes to TestSet
+		restricts all foundation:contains to TestCaseLog
+		restricts some foundation:contains to TestCaseLog
+	]
+	
+	concept TestCaseLog < info:DescriptiveInformationEntity[
+		restricts all info:describes to TestCase
+		restricts some info:describes to TestCase
+		restricts some foundation:contains to Verdict
+		restricts all foundation:isContainedIn to TestSetLog
+		restricts some foundation:isContainedIn to TestSetLog
+	]
+	
+	//Scalar properties
+	scalar property hasVerdictValue [
+	    domain Verdict
+	    range xsd:string
+	    functional // At most one value accepted as result
+	]
+}

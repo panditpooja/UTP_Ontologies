@@ -1,0 +1,5 @@
+vocabulary bundle <http://uaontologies.com/UA_Foundation/bundle#> as ^bundle {
+	
+	includes <http://uaontologies.com/UA_Foundation/UA_Foundation#>
+	
+}

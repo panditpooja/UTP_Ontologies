@@ -1,0 +1,30 @@
+PREFIX utp_desc_proc: <http://example.com/project/description/UTP_Description_Process#>
+PREFIX utp_proc: <http://example.com/project/vocabulary/UTP_Procedure#>
+PREFIX utp_desc_config: <http://example.com/project/description/UTP_Description_Configuration#>
+PREFIX utp_config: <http://example.com/project/vocabulary/UTP_Configuration#>
+PREFIX foundation: <http://uaontologies.com/UA_Foundation/UA_Foundation#>
+PREFIX info: <http://uaontologies.com/UA_Core/UA_Information#>
+
+SELECT ?sharedComponent ?testCase1 ?testCase2
+WHERE {
+    # Specify that the shared resource must be a TestComponent
+    ?sharedComponent a utp_config:TestComponent . ## THIS LINE IS NEW ##
+    
+    # Find the link from a test procedure to its case and configuration
+    ?proc1 info:prescribes ?testCase1 .
+    ?proc1 utp_proc:runsOn ?config1 .
+    
+    # Find the component used in that configuration
+    ?config1 foundation:contains ?compConfig1 .
+    ?compConfig1 info:prescribes ?sharedComponent .
+    
+    # Do the same for a second, potentially different, test case
+    ?proc2 info:prescribes ?testCase2 .
+    ?proc2 utp_proc:runsOn ?config2 .
+    ?config2 foundation:contains ?compConfig2 .
+    ?compConfig2 info:prescribes ?sharedComponent .
+    
+    # Filter to ensure we are comparing two different test cases
+    FILTER (?testCase1 != ?testCase2 && STR(?testCase1) < STR(?testCase2))
+}
+ORDER BY ?sharedComponent

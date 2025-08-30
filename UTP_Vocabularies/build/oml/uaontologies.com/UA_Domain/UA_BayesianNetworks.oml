@@ -1,0 +1,85 @@
+@dc:creator "SIE Disruption Lab"
+@dc:contributor "Joe Gregory"
+@dc:description "A vocabulary to capture the organization patterns required by the SIE Disruption Lab."
+@dc:hasVersion "0.1"
+vocabulary <http://uaontologies.com/UA_Domain/UA_BayesianNetworks#> as UA_BayesianNetworks {
+	
+	////////////////////////////////////////////////////////////////////////////////////
+	
+	/////// Vocabulary Imports ///////
+	
+	
+	// Import standard vocabularies	
+	
+    extends <http://purl.org/dc/elements/1.1/> as dc
+    extends <http://www.w3.org/2000/01/rdf-schema#> as rdfs
+    extends <http://www.w3.org/2001/XMLSchema#> as xsd
+    
+    // Import relevant vocabularies
+    
+    extends <http://uaontologies.com/UA_Foundation/UA_Foundation#> as foundation
+	
+	//extends <http://uaontologies.com/UA_Core/UA_Information#> as info
+	//extends <http://uaontologies.com/UA_Core/UA_Agent#> as agent
+	//extends <http://uaontologies.com/UA_Core/UA_Event#> as event
+	//extends <http://uaontologies.com/UA_Core/UA_Measurement#> as meas
+	//extends <http://uaontologies.com/UA_Core/UA_Provenance#> as prov
+	
+	
+	///////////////////////////////////////////////////////////////////////////////////
+	
+	/////// Vocabulary Definitions ///////
+	
+	///// Aspects
+	
+	
+	
+	///// Concepts
+	
+	
+	
+	///// Relations
+	
+	@rdfs:label "Has Bayesian Child"
+	@dc:description "[=HasBayesianChild=] is a..."
+	relation entity HasBayesianChild [
+		from foundation:IdentifiedEntity
+		to foundation:IdentifiedEntity
+		@rdfs:label "has Bayesian child"
+		forward hasBayesianChild
+		@rdfs:label "has Bayesian parent"
+		reverse hasBayesianParent
+		asymmetric
+		irreflexive
+	]
+	
+	
+	
+	///// Scalar Properties
+	
+	scalar property hasBayesianWeight [
+		domain HasBayesianChild
+		range xsd:decimal
+	]
+	
+	scalar property hasBayesianNodeVisibility [
+		domain foundation:IdentifiedEntity
+		range xsd:boolean
+	]
+	
+	scalar property hasBayesianTrueStateValue [
+		domain foundation:IdentifiedEntity
+		range xsd:decimal
+	]
+	
+	scalar property hasBayesianFalseStateValue [
+		domain foundation:IdentifiedEntity
+		range xsd:decimal
+	]
+	
+	
+	
+	///// Rules
+	
+	
+}

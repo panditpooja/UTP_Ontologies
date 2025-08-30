@@ -1,0 +1,26 @@
+PREFIX utp_process: <http://example.com/project/vocabulary/UTP_Process#>
+PREFIX utp_proc: <http://example.com/project/vocabulary/UTP_Procedure#>
+PREFIX utp_config: <http://example.com/project/vocabulary/UTP_Configuration#>
+PREFIX utp_desc_proc: <http://example.com/project/description/UTP_Description_Process#>
+PREFIX utp_desc_config: <http://example.com/project/description/UTP_Description_Configuration#>
+PREFIX foundation: <http://uaontologies.com/UA_Foundation/UA_Foundation#>
+PREFIX info: <http://uaontologies.com/UA_Core/UA_Information#>
+
+SELECT ?suspectComponent (GROUP_CONCAT(DISTINCT STR(?failedTestCase); separator=", ") AS ?failedTests)
+WHERE {
+    # 1. Find a test case that has a "Fail" verdict.
+    ?failedTestCase a utp_process:TestCase .
+    ?log info:describes ?failedTestCase .
+    ?log foundation:contains ?verdict .
+    ?verdict a utp_process:FailVerdict .
+
+    # 2. Find the components used in that failed test.
+    ?proc info:prescribes ?failedTestCase .
+    ?proc utp_proc:runsOn ?config .
+    ?config foundation:contains ?compConfig .
+    ?compConfig info:prescribes ?suspectComponent .
+    ?suspectComponent a utp_config:TestComponent .
+}
+GROUP BY ?suspectComponent
+# 3. Only show components that were part of 5 or more failures.
+HAVING (COUNT(DISTINCT ?failedTestCase) >= 5)

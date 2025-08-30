@@ -1,0 +1,151 @@
+description <http://example.com/project/description/UTP_Description_Procedure#> as utp_desc_proced {
+	
+	uses <http://uaontologies.com/UA_Foundation/UA_Foundation#> as foundation
+	uses <http://uaontologies.com/UA_Core/UA_Information#> as info
+	uses <http://example.com/project/vocabulary/UTP_Procedure#> as utp_proc
+	extends <http://example.com/project/description/UTP_Description_Process#> as utp_desc_proc
+	extends <http://example.com/project/description/UTP_Description_Configuration#> as utp_desc_config
+	
+	// Procedure for Range Test
+    instance catapultRangeTestProcedure : utp_proc:TestProcedure [
+        info:prescribes utp_desc_proc:catapultRangeTest
+        utp_proc:runsOn utp_desc_config:catapultRangeTestConfig
+        foundation:contains catapultRangeProcedureSetup
+        foundation:contains catapultRangeProcedureMain
+        foundation:contains catapultRangeProcedureTeardown
+    ]
+
+    instance catapultRangeProcedureSetup : utp_proc:TestProcedureSetup [
+    	info:prescribes utp_desc_proc:catapultMeasureRangeSetup
+        foundation:contains catapultProcLoadProjectile
+        foundation:contains catapultProcSetProjectileAngle
+        foundation:isContainedIn catapultRangeTestProcedure
+    ]
+
+    instance catapultRangeProcedureMain : utp_proc:TestProcedureMain [
+    	info:prescribes utp_desc_proc:catapultMeasureRangeMain
+        foundation:contains catapultProcLaunchAndMeasure
+        foundation:isContainedIn catapultRangeTestProcedure
+    ]
+
+    instance catapultRangeProcedureTeardown : utp_proc:TestProcedureTeardown [
+    	info:prescribes utp_desc_proc:catapultMeasureRangeTeardown
+        foundation:contains catapultProcClearField
+        foundation:isContainedIn catapultRangeTestProcedure
+    ]
+    
+    instance catapultProcLoadProjectile : utp_proc:TestActionProcedure [
+        info:prescribes utp_desc_proc:catapultLoadProjectile
+        foundation:isContainedIn catapultRangeProcedureSetup
+    ]
+    
+    instance catapultProcSetProjectileAngle : utp_proc:TestActionProcedure [
+        info:prescribes utp_desc_proc:catapultSetProjectileAngle
+        foundation:isContainedIn catapultRangeProcedureSetup
+    ]
+
+    instance catapultProcLaunchAndMeasure : utp_proc:TestActionProcedure [
+        info:prescribes utp_desc_proc:catapultLaunchAndMeasure
+        foundation:isContainedIn catapultRangeProcedureMain
+    ]
+
+    instance catapultProcClearField : utp_proc:TestActionProcedure [
+        info:prescribes utp_desc_proc:catapultClearField
+        foundation:isContainedIn catapultRangeProcedureTeardown
+    ]
+
+    // Procedure for Mass Test
+    instance catapultMassTestProcedure : utp_proc:TestProcedure [
+        info:prescribes utp_desc_proc:catapultMassTest
+        utp_proc:runsOn utp_desc_config:catapultMassTestConfig
+        foundation:contains catapultMassProcedureSetup
+        foundation:contains catapultMassProcedureMain
+        foundation:contains catapultMassProcedureTeardown
+    ]
+
+    instance catapultMassProcedureSetup : utp_proc:TestProcedureSetup [
+    	info:prescribes utp_desc_proc:catapultMassSetup
+        foundation:contains catapultProcPlaceBallOnScale
+        foundation:isContainedIn catapultMassTestProcedure
+    ]
+
+    instance catapultMassProcedureMain : utp_proc:TestProcedureMain [
+    	info:prescribes utp_desc_proc:catapultMassMain
+        foundation:contains catapultProcRecordMassReading
+        foundation:isContainedIn catapultMassTestProcedure
+    ]
+
+    instance catapultMassProcedureTeardown : utp_proc:TestProcedureTeardown [
+    	info:prescribes utp_desc_proc:catapultMassTeardown
+        foundation:contains catapultProcRemoveBallFromScale
+        foundation:isContainedIn catapultMassTestProcedure
+    ]
+
+    instance catapultProcPlaceBallOnScale : utp_proc:TestActionProcedure [
+        info:prescribes utp_desc_proc:placeBallOnScale
+        foundation:isContainedIn catapultMassProcedureSetup
+    ]
+
+    instance catapultProcRecordMassReading : utp_proc:TestActionProcedure [
+        info:prescribes utp_desc_proc:recordMassReading
+        foundation:isContainedIn catapultMassProcedureMain
+    ]
+
+    instance catapultProcRemoveBallFromScale : utp_proc:TestActionProcedure [
+        info:prescribes utp_desc_proc:removeBallFromScale
+        foundation:isContainedIn catapultMassProcedureTeardown
+    ]
+
+    // Procedure for Accuracy Test
+    instance catapultAccuracyTestProcedure : utp_proc:TestProcedure [
+        info:prescribes utp_desc_proc:catapultAccuracyTest
+        utp_proc:runsOn utp_desc_config:catapultAccuracyTestConfig
+        foundation:contains catapultAccuracyProcedureSetup
+        foundation:contains catapultAccuracyProcedureMain
+        foundation:contains catapultAccuracyProcedureTeardown
+    ]
+
+    instance catapultAccuracyProcedureSetup : utp_proc:TestProcedureSetup [
+    	info:prescribes utp_desc_proc:catapultAccuracySetup
+        foundation:contains catapultProcSetTargetDistance
+        // Re-using the load projectile procedure
+        foundation:contains catapultProcLoadProjectile 
+        foundation:isContainedIn catapultAccuracyTestProcedure
+    ]
+
+    instance catapultAccuracyProcedureMain : utp_proc:TestProcedureMain [
+    	info:prescribes utp_desc_proc:catapultAccuracyMain
+        foundation:contains catapultProcLaunchAtTarget
+        foundation:isContainedIn catapultAccuracyTestProcedure
+    ]
+
+    instance catapultAccuracyProcedureTeardown : utp_proc:TestProcedureTeardown [
+    	info:prescribes utp_desc_proc:catapultAccuracyTeardown
+        foundation:contains catapultProcRetrieveProjectile
+        foundation:isContainedIn catapultAccuracyTestProcedure
+    ]
+
+    instance catapultProcSetTargetDistance : utp_proc:TestActionProcedure [
+        info:prescribes utp_desc_proc:catapultSetTargetDistance
+        foundation:isContainedIn catapultAccuracyProcedureSetup
+    ]
+
+    instance catapultProcLaunchAtTarget : utp_proc:TestActionProcedure [
+        info:prescribes utp_desc_proc:catapultLaunchAtTarget
+        foundation:isContainedIn catapultAccuracyProcedureMain
+    ]
+
+    instance catapultProcRetrieveProjectile : utp_proc:TestActionProcedure [
+        info:prescribes utp_desc_proc:catapultRetrieveProjectile
+        foundation:isContainedIn catapultAccuracyProcedureTeardown
+    ]
+    
+    // ExecutionSchedule
+    instance catapultLaunchSchedule : utp_proc:TestExecutionSchedule [
+    	info:prescribes utp_desc_proc:catapultFullLaunchTestSuite
+    	foundation:contains catapultMassTestProcedure     // Should be done first
+    	foundation:contains catapultRangeTestProcedure
+    	foundation:contains catapultAccuracyTestProcedure
+	]
+	
+}

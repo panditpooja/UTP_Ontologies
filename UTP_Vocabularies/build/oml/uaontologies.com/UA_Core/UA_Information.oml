@@ -1,0 +1,147 @@
+@dc:creator "SIE Disruption Lab"
+@dc:contributor "Joe Gregory"
+@dc:description "A vocabulary to capture the information patterns required by the SIE Disruption Lab. Note that this is essentially a simplified IEO."
+@dc:hasVersion "0.1"
+vocabulary <http://uaontologies.com/UA_Core/UA_Information#> as UA_Information {
+	
+	////////////////////////////////////////////////////////////////////////////////////
+	
+	/////// Vocabulary Imports ///////
+	
+	
+	// Import standard vocabularies	
+	
+    extends <http://purl.org/dc/elements/1.1/> as dc
+    extends <http://www.w3.org/2000/01/rdf-schema#> as rdfs
+    //extends <http://www.w3.org/2001/XMLSchema#> as xsd
+    
+    // Import relevant vocabularies
+    
+    extends <http://uaontologies.com/UA_Foundation/UA_Foundation#> as foundation
+	
+	
+	///////////////////////////////////////////////////////////////////////////////////
+	
+	/////// Vocabulary Definitions ///////
+	
+	///// Aspects
+	
+	
+	
+	///// Concepts
+	
+	@rdfs:label "Information Entity"
+	@dc:description "A [=InformationEntity=]..."
+	concept InformationEntity < foundation:GenericallyDependentContinuant, foundation:Container, foundation:ContainedElement [
+		restricts all foundation:genericallyDependentOn to InformationArtifact
+		restricts some isAbout to foundation:IdentifiedEntity
+		restricts all foundation:contains to InformationEntity
+		restricts all foundation:isContainedIn to InformationEntity
+	]
+		
+	@rdfs:label "Descriptive Information Entity"
+	@dc:description "A [=DescriptiveInformationEntity=]..."
+	concept DescriptiveInformationEntity < InformationEntity [
+		restricts some describes to foundation:IdentifiedEntity
+	]
+	
+	@rdfs:label "Prescriptive Information Entity"
+	@dc:description "A [=PrescriptiveInformationEntity=]..."
+	concept PrescriptiveInformationEntity < InformationEntity [
+		restricts some prescribes to foundation:IdentifiedEntity
+	]
+		
+	@rdfs:label "Information Artifact"
+	@dc:description "A [=InformationArtifact=]..."
+	concept InformationArtifact < foundation:Object
+	
+	@rdfs:label "Model"
+	@dc:description "A [=Model=]..."
+	concept Model < InformationArtifact, foundation:Container, foundation:ContainedElement [
+		restricts all foundation:contains to Model
+		restricts all foundation:isContainedIn to Model
+	]
+	
+	@rdfs:label "Document"
+	@dc:description "A [=Document=]..."
+	concept Document < InformationArtifact
+	
+	
+	
+	///// Relations
+	
+	@rdfs:label "Is About"
+	@dc:description "[=IsAbout=] is a..."
+	relation entity IsAbout [
+		from InformationEntity
+		to foundation:IdentifiedEntity
+		@rdfs:label "is about"
+		forward isAbout
+		@rdfs:label "is subject of"
+		reverse isSubjectOf
+		asymmetric
+		irreflexive
+	]
+	
+	@rdfs:label "Describes"
+	@dc:description "[=Describes=] is a..."
+	relation entity Describes [
+		from DescriptiveInformationEntity
+		to foundation:IdentifiedEntity
+		@rdfs:label "describes"
+		forward describes
+		@rdfs:label "is described by"
+		reverse isDescribedBy
+		asymmetric
+		irreflexive
+	]
+	< IsAbout 
+	
+	@rdfs:label "Prescribes"
+	@dc:description "[=Prescribes=] is a..."
+	relation entity Prescribes [
+		from PrescriptiveInformationEntity
+		to foundation:IdentifiedEntity
+		@rdfs:label "prescribes"
+		forward prescribes
+		@rdfs:label "is Prescribed by"
+		reverse isPrescribedBy
+		asymmetric
+		irreflexive
+	]
+	< IsAbout 
+
+	
+	
+	///// Scalar Properties
+	
+	
+
+	///// Redefined Concepts
+	
+	
+	
+	///// Rules
+	
+	@rdfs:comment "When an IE represents something, all things contained by the IE also represent it."
+	rule IE-Inherits-Representation [
+	isAbout(a, b) & foundation:contains(a, c) -> isAbout(c, b)
+	]
+	
+	@rdfs:comment "When an IE represents a thing, everything contained within that thing are also represented by the IE."
+	rule Representation-is-inherited [
+	isAbout(a, b) & foundation:contains(b, c) -> isAbout(a, c)
+	]
+	
+	@rdfs:comment "When an IE represents a thing, everything that contains that thing are also represented by the IE."
+	rule Representation-is-owned [
+	isAbout(a, b) & foundation:contains(c, b) -> isAbout(a, c)
+	]
+	
+	@rdfs:comment "When an IE represents a thing, everything that contains that thing are also represented by the IE."
+	rule Dependence-is-inherited [
+	InformationArtifact(a) & foundation:hasGenericDependent(a, b) & foundation:contains(b, c) -> foundation:hasGenericDependent(a, c)
+	]
+	
+	
+}

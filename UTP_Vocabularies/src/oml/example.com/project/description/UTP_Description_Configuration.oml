@@ -1,0 +1,111 @@
+description <http://example.com/project/description/UTP_Description_Configuration#> as utp_desc_config {
+
+    uses <http://uaontologies.com/UA_Foundation/UA_Foundation#> as foundation
+    uses <http://uaontologies.com/UA_Core/UA_Information#> as info
+    uses <http://example.com/project/vocabulary/UTP_Configuration#> as utp_config
+    extends <http://example.com/project/description/UTP_Description_Process#> as utp_desc_proc
+
+    // Test Configuration
+    instance catapultRangeTestConfig : utp_config:TestConfiguration [
+	    info:prescribes utp_desc_proc:catapultRangeTest 
+	    foundation:contains catapultConfig_forRange
+	    foundation:contains metalBallConfig_forRange
+	    foundation:contains measurementTapeConfig_forRange 
+	    foundation:contains weighingScaleConfig_forRange   
+	]
+	
+	instance catapultMassTestConfig : utp_config:TestConfiguration [
+	    info:prescribes utp_desc_proc:catapultMassTest 
+	    foundation:contains catapultConfig_forMass
+	    foundation:contains metalBallConfig_forMass
+	    foundation:contains weighingScaleConfig_forMass   
+	]
+	
+	instance catapultAccuracyTestConfig : utp_config:TestConfiguration [
+	    info:prescribes utp_desc_proc:catapultAccuracyTest
+	    foundation:contains catapultConfig_forAccuracy
+	    foundation:contains metalBallConfig_forAccuracy
+	    foundation:contains measurementTapeConfig_forAccuracy 
+	    foundation:contains weighingScaleConfig_forAccuracy   
+	]
+
+    // Test Item and configuration
+    instance wood : foundation:MaterialEntity
+    
+    instance catapult : utp_config:TestItem [
+    	foundation:genericallyDependentOn wood
+    ] 
+    
+  	instance catapultConfig_forRange : utp_config:TestItemConfiguration [
+    	info:prescribes catapult
+    	foundation:isContainedIn catapultRangeTestConfig
+  	]
+
+  	instance catapultConfig_forMass : utp_config:TestItemConfiguration [
+    	info:prescribes catapult
+    	foundation:isContainedIn catapultMassTestConfig
+  	]
+
+  	instance catapultConfig_forAccuracy : utp_config:TestItemConfiguration [
+    	info:prescribes catapult
+    	foundation:isContainedIn catapultAccuracyTestConfig
+  	]
+
+    // Test Components and configuration
+	instance steelBallMaterial : foundation:MaterialEntity
+	instance plasticMaterial : foundation:MaterialEntity
+	instance electronicAndMetalComponents : foundation:MaterialEntity
+	
+	instance metalBall : utp_config:TestComponent [
+	    foundation:genericallyDependentOn steelBallMaterial
+	]
+	
+	instance measurementTape : utp_config:TestComponent [
+	    foundation:genericallyDependentOn plasticMaterial
+	]
+	
+	instance weighingScale : utp_config:TestComponent [
+	    foundation:genericallyDependentOn electronicAndMetalComponents
+	]
+	
+    // Configurations for Metal Ball
+    instance metalBallConfig_forRange : utp_config:TestComponentConfiguration [
+	    info:prescribes metalBall
+	    foundation:isContainedIn catapultRangeTestConfig
+  	]
+    
+    instance metalBallConfig_forMass : utp_config:TestComponentConfiguration [
+    	info:prescribes metalBall
+    	foundation:isContainedIn catapultMassTestConfig
+  	]
+    instance metalBallConfig_forAccuracy : utp_config:TestComponentConfiguration [
+    	info:prescribes metalBall
+    	foundation:isContainedIn catapultAccuracyTestConfig
+  	]
+
+    // Configurations for Measurement Tape
+    instance measurementTapeConfig_forRange : utp_config:TestComponentConfiguration [
+	    info:prescribes measurementTape
+	    foundation:isContainedIn catapultRangeTestConfig
+  	]
+    
+    instance measurementTapeConfig_forAccuracy : utp_config:TestComponentConfiguration [
+    	info:prescribes measurementTape
+    	foundation:isContainedIn catapultAccuracyTestConfig
+  	]
+
+    // Configurations for Weighing Scale
+    instance weighingScaleConfig_forRange : utp_config:TestComponentConfiguration [
+	    info:prescribes weighingScale
+	    foundation:isContainedIn catapultRangeTestConfig
+  	]
+   
+    instance weighingScaleConfig_forMass : utp_config:TestComponentConfiguration [
+    	info:prescribes weighingScale
+    	foundation:isContainedIn catapultMassTestConfig
+  	]
+    instance weighingScaleConfig_forAccuracy : utp_config:TestComponentConfiguration [
+    	info:prescribes weighingScale
+    	foundation:isContainedIn catapultAccuracyTestConfig
+  	]
+}

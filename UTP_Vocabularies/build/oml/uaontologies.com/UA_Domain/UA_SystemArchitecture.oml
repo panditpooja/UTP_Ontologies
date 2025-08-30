@@ -1,0 +1,166 @@
+@dc:creator "SIE Disruption Lab"
+@dc:contributor "Joe Gregory"
+@dc:description "A vocabulary to capture system architecture patterns"
+@dc:hasVersion "0.1"
+vocabulary <http://uaontologies.com/UA_Domain/UA_SystemArchitecture#> as UA_SystemArchitecture {
+	
+	////////////////////////////////////////////////////////////////////////////////////
+	
+	/////// Vocabulary Imports ///////
+	
+	
+	// Import standard vocabularies	
+	
+    extends <http://purl.org/dc/elements/1.1/> as dc
+    extends <http://www.w3.org/2000/01/rdf-schema#> as rdfs
+    //extends <http://www.w3.org/2001/XMLSchema#> as xsd
+    
+    // Import relevant vocabularies
+    
+    extends <http://uaontologies.com/UA_Foundation/UA_Foundation#> as foundation
+	
+	extends <http://uaontologies.com/UA_Core/UA_Information#> as info
+	//extends <http://uaontologies.com/UA_Core/UA_Agent#> as agent
+	extends <http://uaontologies.com/UA_Core/UA_Event#> as event
+	//extends <http://uaontologies.com/UA_Core/UA_Measurement#> as meas
+	//extends <http://uaontologies.com/UA_Core/UA_Provenance#> as prov
+	
+	
+	///////////////////////////////////////////////////////////////////////////////////
+	
+	/////// Vocabulary Definitions ///////
+	
+	///// Aspects
+	
+	
+	
+	///// Concepts
+	
+	@rdfs:label "System"
+	@dc:description "A [=System=]..."
+	concept System < foundation:Object, foundation:Container [
+		restricts all foundation:contains to foundation:Object
+	] 
+	
+	@rdfs:label "Function Occurence"
+	@dc:description "A [=FunctionOccurence=]..."
+	concept FunctionOccurrence < foundation:Process [
+		restricts all event:isManifestationOf to foundation:Function
+		restricts some event:isManifestationOf to foundation:Function
+		restricts all foundation:contains to FunctionOccurrence 
+		restricts all foundation:isContainedIn to FunctionOccurrence 
+	]
+	
+	@rdfs:label "Interface"
+	@dc:description "An [=Interface=]..."
+	concept Interface < foundation:Object 
+	
+	@rdfs:label "Architecture Description"
+	@dc:description "An [=ArchitectureDescription=]..."
+	concept ArchitectureDescription < info:DescriptiveInformationEntity [
+		restricts all info:describes to Architecture
+	]
+	
+	@rdfs:label "Architecture"
+	@dc:description "An [=Architecture=]..."
+	concept Architecture < foundation:Quality [
+		restricts all foundation:specificallyDependentOn to System
+		restricts some foundation:specificallyDependentOn to System
+	]
+	
+	@rdfs:label "Configuration"
+	@dc:description "An [=Configuration=]..."
+	concept Configuration < foundation:Quality [
+		restricts all foundation:specificallyDependentOn to System
+		restricts some foundation:specificallyDependentOn to System
+	]
+	 	 
+	
+		
+	///// Relations
+	
+	@rdfs:label "Executed By"
+	@dc:description "[=ExecutedBy=] is a..."
+	relation entity ExecutedBy [
+		from FunctionOccurrence
+		to foundation:Continuant
+		@rdfs:label "executed by"
+		forward executedBy
+		@rdfs:label "executes"
+		reverse executes
+		asymmetric
+		irreflexive
+	]
+	< event:HasParticipant
+	
+	@rdfs:label "CanInput"
+	@dc:description "[=CanInput=] is a..."
+	relation entity CanInput [
+		from foundation:Function
+		to foundation:Continuant
+		@rdfs:label "can input"
+		forward canInput
+		@rdfs:label "can be input of"
+		reverse canBeInputOf
+		asymmetric
+		irreflexive
+	]
+	
+	@rdfs:label "CanOutput"
+	@dc:description "[=CanOutput=] is a..."
+	relation entity CanOutput [
+		from foundation:Function
+		to foundation:Continuant
+		@rdfs:label "can output"
+		forward canOutput
+		@rdfs:label "can be output of"
+		reverse canBeOutputOf
+		asymmetric
+		irreflexive
+	]
+	
+	@rdfs:label "ConnectsTo"
+	@dc:description "[=ConnectsTo=] is a..."
+	relation entity ConnectsTo [
+		from Interface
+		to Interface
+		@rdfs:label "connects to A"
+		forward connectsToA
+		@rdfs:label "connects to B"
+		reverse connectsToB
+		asymmetric
+		irreflexive
+	]
+	
+	@rdfs:label "Has Item Flow"
+	@dc:description "[=HasItemFlow=] is a..."
+	relation entity HasItemFlow [
+		from ConnectsTo
+		to foundation:IndependentContinuant
+		@rdfs:label "has item flow"
+		forward hasItemFlow
+		@rdfs:label "item flow of connection"
+		reverse itemFlowOfConnection
+		asymmetric
+		irreflexive
+	]
+	
+	
+	
+	///// Scalar Properties
+	
+	
+	
+	///// Refined Concepts
+	
+	
+	
+	///// Rules
+	
+	@rdfs:comment "If B is a manifestation of Function A, and C can execute Function B, then C executes Function A"
+	rule Function_manifestation [
+		event:manifestsIn(a,b) & foundation:specificallyDependentOn(a,c) -> executes(c,b)
+	]
+	
+	
+}

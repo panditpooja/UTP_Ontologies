@@ -1,0 +1,801 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://example.com/project/description/UTP_Description_Data#"
+     xml:base="http://example.com/project/description/UTP_Description_Data"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:oml="http://opencaesar.io/oml#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:UA_Agent="http://uaontologies.com/UA_Core/UA_Agent#"
+     xmlns:UTP_Data="http://example.com/project/vocabulary/UTP_Data#"
+     xmlns:UA_Foundation="http://uaontologies.com/UA_Foundation/UA_Foundation#"
+     xmlns:utp_desc_data="http://example.com/project/description/UTP_Description_Data#"
+     xmlns:UA_Information="http://uaontologies.com/UA_Core/UA_Information#">
+    <owl:Ontology rdf:about="http://example.com/project/description/UTP_Description_Data">
+        <owl:imports rdf:resource="http://example.com/project/description/UTP_Description_Configuration"/>
+        <owl:imports rdf:resource="http://example.com/project/vocabulary/UTP_Data"/>
+        <owl:imports rdf:resource="http://uaontologies.com/UA_Core/UA_Agent"/>
+        <owl:imports rdf:resource="http://uaontologies.com/UA_Core/UA_Information"/>
+        <owl:imports rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation"/>
+        <oml:namespace rdf:resource="http://example.com/project/description/UTP_Description_Data#"/>
+        <oml:prefix>utp_desc_data</oml:prefix>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Description"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://opencaesar.io/oml#namespace -->
+
+
+    <owl:AnnotationProperty rdf:about="http://opencaesar.io/oml#namespace"/>
+    
+
+
+    <!-- http://opencaesar.io/oml#prefix -->
+
+
+    <owl:AnnotationProperty rdf:about="http://opencaesar.io/oml#prefix"/>
+    
+
+
+    <!-- http://opencaesar.io/oml#type -->
+
+
+    <owl:AnnotationProperty rdf:about="http://opencaesar.io/oml#type"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://example.com/project/vocabulary/UTP_Data#informs -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.com/project/vocabulary/UTP_Data#informs"/>
+    
+
+
+    <!-- http://uaontologies.com/UA_Core/UA_Agent#hasInput -->
+
+
+    <owl:ObjectProperty rdf:about="http://uaontologies.com/UA_Core/UA_Agent#hasInput"/>
+    
+
+
+    <!-- http://uaontologies.com/UA_Core/UA_Agent#hasOutput -->
+
+
+    <owl:ObjectProperty rdf:about="http://uaontologies.com/UA_Core/UA_Agent#hasOutput"/>
+    
+
+
+    <!-- http://uaontologies.com/UA_Core/UA_Information#describes -->
+
+
+    <owl:ObjectProperty rdf:about="http://uaontologies.com/UA_Core/UA_Information#describes"/>
+    
+
+
+    <!-- http://uaontologies.com/UA_Core/UA_Information#prescribes -->
+
+
+    <owl:ObjectProperty rdf:about="http://uaontologies.com/UA_Core/UA_Information#prescribes"/>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#contains -->
+
+
+    <owl:ObjectProperty rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#contains"/>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#genericallyDependentOn -->
+
+
+    <owl:ObjectProperty rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#genericallyDependentOn"/>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#hasGenericDependent -->
+
+
+    <owl:ObjectProperty rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#hasGenericDependent"/>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#isContainedIn -->
+
+
+    <owl:ObjectProperty rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#isContainedIn"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#accuracyDataPool_session -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#accuracyDataPool_session">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Information#DescriptiveInformationEntity"/>
+        <UA_Information:describes rdf:resource="http://example.com/project/description/UTP_Description_Data#catapultAccuracyDataPool"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#accuracyOffsetShot1_at10m -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#accuracyOffsetShot1_at10m">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Data#DataItem"/>
+        <UA_Foundation:hasGenericDependent rdf:resource="http://example.com/project/description/UTP_Description_Data#accuracyShot1_dx"/>
+        <UA_Foundation:hasGenericDependent rdf:resource="http://example.com/project/description/UTP_Description_Data#accuracyShot1_dy"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Data#catapultAccuracyDataPool"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#accuracyOffsetShot2_at15m -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#accuracyOffsetShot2_at15m">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Data#DataItem"/>
+        <UA_Foundation:hasGenericDependent rdf:resource="http://example.com/project/description/UTP_Description_Data#accuracyShot2_dx"/>
+        <UA_Foundation:hasGenericDependent rdf:resource="http://example.com/project/description/UTP_Description_Data#accuracyShot2_dy"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Data#catapultAccuracyDataPool"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#accuracyPartition_byDistance -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#accuracyPartition_byDistance">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Data#DataPartition"/>
+        <UA_Foundation:genericallyDependentOn rdf:resource="http://example.com/project/description/UTP_Description_Data#catapultAccuracyDataPool"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#accuracyShot1_dx -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#accuracyShot1_dx">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Information#DescriptiveInformationEntity"/>
+        <UA_Information:describes rdf:resource="http://example.com/project/description/UTP_Description_Data#accuracyOffsetShot1_at10m"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#accuracyShot1_dy -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#accuracyShot1_dy">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Information#DescriptiveInformationEntity"/>
+        <UA_Information:describes rdf:resource="http://example.com/project/description/UTP_Description_Data#accuracyOffsetShot1_at10m"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#accuracyShot1_target -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#accuracyShot1_target">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Information#DescriptiveInformationEntity"/>
+        <UA_Information:describes rdf:resource="http://example.com/project/description/UTP_Description_Data#targetSetup_10m"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#accuracyShot2_dx -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#accuracyShot2_dx">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Information#DescriptiveInformationEntity"/>
+        <UA_Information:describes rdf:resource="http://example.com/project/description/UTP_Description_Data#accuracyOffsetShot2_at15m"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#accuracyShot2_dy -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#accuracyShot2_dy">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Information#DescriptiveInformationEntity"/>
+        <UA_Information:describes rdf:resource="http://example.com/project/description/UTP_Description_Data#accuracyOffsetShot2_at15m"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#accuracyShot2_target -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#accuracyShot2_target">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Information#DescriptiveInformationEntity"/>
+        <UA_Information:describes rdf:resource="http://example.com/project/description/UTP_Description_Data#targetSetup_15m"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#catapultAccuracyConstraint -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#catapultAccuracyConstraint">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Data#Constraint"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Data#accuracyOffsetShot1_at10m"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Data#accuracyOffsetShot2_at15m"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Data#catapultAccuracyDataSpec"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#catapultAccuracyDataPool -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#catapultAccuracyDataPool">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Data#DataPool"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Data#accuracyOffsetShot1_at10m"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Data#accuracyOffsetShot2_at15m"/>
+        <UA_Foundation:hasGenericDependent rdf:resource="http://example.com/project/description/UTP_Description_Data#accuracyDataPool_session"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#catapultAccuracyDataSpec -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#catapultAccuracyDataSpec">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Data#DataSpecification"/>
+        <UTP_Data:informs rdf:resource="http://example.com/project/description/UTP_Description_Data#measurementTapeProvider"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Data#catapultAccuracyDataPool"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Data#catapultAccuracyConstraint"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Data#catapultAccuracyDataType"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#catapultAccuracyDataType -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#catapultAccuracyDataType">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Data#DataType"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Data#accuracyOffsetShot1_at10m"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Data#accuracyOffsetShot2_at15m"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Data#catapultAccuracyDataSpec"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#catapultRangeConstraint -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#catapultRangeConstraint">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Data#Constraint"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Data#rangeShot1_15deg"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Data#rangeShot2_30deg"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Data#catapultRangeDataSpec"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#catapultRangeDataPool -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#catapultRangeDataPool">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Data#DataPool"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Data#rangeShot1_15deg"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Data#rangeShot2_30deg"/>
+        <UA_Foundation:hasGenericDependent rdf:resource="http://example.com/project/description/UTP_Description_Data#rangeDataPool_session"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#catapultRangeDataSpec -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#catapultRangeDataSpec">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Data#DataSpecification"/>
+        <UTP_Data:informs rdf:resource="http://example.com/project/description/UTP_Description_Data#measurementTapeProvider"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Data#catapultRangeDataPool"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Data#catapultRangeConstraint"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Data#catapultRangeDataType"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#catapultRangeDataType -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#catapultRangeDataType">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Data#DataType"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Data#rangeShot1_15deg"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Data#rangeShot2_30deg"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Data#catapultRangeDataSpec"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#catapultShotEventPool -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#catapultShotEventPool">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Data#DataPool"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Data#shotEvent_shot1_15deg"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Data#shotEvent_shot2_30deg"/>
+        <UA_Foundation:hasGenericDependent rdf:resource="http://example.com/project/description/UTP_Description_Data#shotEventPool_session"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#massDataPool_session -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#massDataPool_session">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Information#DescriptiveInformationEntity"/>
+        <UA_Information:describes rdf:resource="http://example.com/project/description/UTP_Description_Data#metalBallMassDataPool"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#massPartition_byBall -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#massPartition_byBall">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Data#DataPartition"/>
+        <UA_Foundation:genericallyDependentOn rdf:resource="http://example.com/project/description/UTP_Description_Data#metalBallMassDataPool"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#massReading_ball1 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#massReading_ball1">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Data#DataItem"/>
+        <UA_Foundation:hasGenericDependent rdf:resource="http://example.com/project/description/UTP_Description_Data#mass_ball1_grams"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Data#metalBallMassDataPool"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#massReading_ball2 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#massReading_ball2">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Data#DataItem"/>
+        <UA_Foundation:hasGenericDependent rdf:resource="http://example.com/project/description/UTP_Description_Data#mass_ball2_grams"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Data#metalBallMassDataPool"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#mass_ball1_grams -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#mass_ball1_grams">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Information#DescriptiveInformationEntity"/>
+        <UA_Information:describes rdf:resource="http://example.com/project/description/UTP_Description_Data#massReading_ball1"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#mass_ball2_grams -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#mass_ball2_grams">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Information#DescriptiveInformationEntity"/>
+        <UA_Information:describes rdf:resource="http://example.com/project/description/UTP_Description_Data#massReading_ball2"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#measurementTapeProvider -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#measurementTapeProvider">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Data#DataProvider"/>
+        <UA_Agent:hasInput rdf:resource="http://example.com/project/description/UTP_Description_Data#catapultShotEventPool"/>
+        <UA_Agent:hasInput rdf:resource="http://example.com/project/description/UTP_Description_Data#targetSetupPool"/>
+        <UA_Agent:hasOutput rdf:resource="http://example.com/project/description/UTP_Description_Data#catapultAccuracyDataPool"/>
+        <UA_Agent:hasOutput rdf:resource="http://example.com/project/description/UTP_Description_Data#catapultRangeDataPool"/>
+        <UA_Foundation:genericallyDependentOn rdf:resource="http://example.com/project/description/UTP_Description_Configuration#plasticMaterial"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#metalBallMassConstraint -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#metalBallMassConstraint">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Data#Constraint"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Data#massReading_ball1"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Data#massReading_ball2"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Data#metalBallMassDataSpec"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#metalBallMassDataPool -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#metalBallMassDataPool">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Data#DataPool"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Data#massReading_ball1"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Data#massReading_ball2"/>
+        <UA_Foundation:hasGenericDependent rdf:resource="http://example.com/project/description/UTP_Description_Data#massDataPool_session"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#metalBallMassDataSpec -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#metalBallMassDataSpec">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Data#DataSpecification"/>
+        <UTP_Data:informs rdf:resource="http://example.com/project/description/UTP_Description_Data#weighingScaleProvider"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Data#metalBallMassDataPool"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Data#metalBallMassConstraint"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Data#metalBallMassDataType"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#metalBallMassDataType -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#metalBallMassDataType">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Data#DataType"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Data#massReading_ball1"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Data#massReading_ball2"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Data#metalBallMassDataSpec"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#rangeDataPool_session -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#rangeDataPool_session">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Information#DescriptiveInformationEntity"/>
+        <UA_Information:describes rdf:resource="http://example.com/project/description/UTP_Description_Data#catapultRangeDataPool"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#rangePartition_byAngle -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#rangePartition_byAngle">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Data#DataPartition"/>
+        <UA_Foundation:genericallyDependentOn rdf:resource="http://example.com/project/description/UTP_Description_Data#catapultRangeDataPool"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#rangeShot1_15deg -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#rangeShot1_15deg">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Data#DataItem"/>
+        <UA_Foundation:hasGenericDependent rdf:resource="http://example.com/project/description/UTP_Description_Data#shot1_dist"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Data#catapultRangeDataPool"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#rangeShot2_30deg -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#rangeShot2_30deg">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Data#DataItem"/>
+        <UA_Foundation:hasGenericDependent rdf:resource="http://example.com/project/description/UTP_Description_Data#shot2_dist"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Data#catapultRangeDataPool"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#shot1_15deg_angle -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#shot1_15deg_angle">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Information#DescriptiveInformationEntity"/>
+        <UA_Information:describes rdf:resource="http://example.com/project/description/UTP_Description_Data#shotEvent_shot1_15deg"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#shot1_15deg_time -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#shot1_15deg_time">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Information#DescriptiveInformationEntity"/>
+        <UA_Information:describes rdf:resource="http://example.com/project/description/UTP_Description_Data#shotEvent_shot1_15deg"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#shot1_dist -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#shot1_dist">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Information#DescriptiveInformationEntity"/>
+        <UA_Information:describes rdf:resource="http://example.com/project/description/UTP_Description_Data#rangeShot1_15deg"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#shot2_30deg_angle -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#shot2_30deg_angle">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Information#DescriptiveInformationEntity"/>
+        <UA_Information:describes rdf:resource="http://example.com/project/description/UTP_Description_Data#shotEvent_shot2_30deg"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#shot2_30deg_time -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#shot2_30deg_time">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Information#DescriptiveInformationEntity"/>
+        <UA_Information:describes rdf:resource="http://example.com/project/description/UTP_Description_Data#shotEvent_shot2_30deg"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#shot2_dist -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#shot2_dist">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Information#DescriptiveInformationEntity"/>
+        <UA_Information:describes rdf:resource="http://example.com/project/description/UTP_Description_Data#rangeShot2_30deg"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#shotEventPool_session -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#shotEventPool_session">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Information#DescriptiveInformationEntity"/>
+        <UA_Information:describes rdf:resource="http://example.com/project/description/UTP_Description_Data#catapultShotEventPool"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#shotEvent_shot1_15deg -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#shotEvent_shot1_15deg">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Data#DataItem"/>
+        <UA_Foundation:hasGenericDependent rdf:resource="http://example.com/project/description/UTP_Description_Data#shot1_15deg_angle"/>
+        <UA_Foundation:hasGenericDependent rdf:resource="http://example.com/project/description/UTP_Description_Data#shot1_15deg_time"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Data#catapultShotEventPool"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#shotEvent_shot2_30deg -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#shotEvent_shot2_30deg">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Data#DataItem"/>
+        <UA_Foundation:hasGenericDependent rdf:resource="http://example.com/project/description/UTP_Description_Data#shot2_30deg_angle"/>
+        <UA_Foundation:hasGenericDependent rdf:resource="http://example.com/project/description/UTP_Description_Data#shot2_30deg_time"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Data#catapultShotEventPool"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#targetSetupPool -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#targetSetupPool">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Data#DataPool"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Data#targetSetup_10m"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Data#targetSetup_15m"/>
+        <UA_Foundation:hasGenericDependent rdf:resource="http://example.com/project/description/UTP_Description_Data#targetSetupPool_session"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#targetSetupPool_session -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#targetSetupPool_session">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Information#DescriptiveInformationEntity"/>
+        <UA_Information:describes rdf:resource="http://example.com/project/description/UTP_Description_Data#targetSetupPool"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#targetSetup_10m -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#targetSetup_10m">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Data#DataItem"/>
+        <UA_Foundation:hasGenericDependent rdf:resource="http://example.com/project/description/UTP_Description_Data#accuracyShot1_target"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Data#targetSetupPool"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#targetSetup_15m -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#targetSetup_15m">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Data#DataItem"/>
+        <UA_Foundation:hasGenericDependent rdf:resource="http://example.com/project/description/UTP_Description_Data#accuracyShot2_target"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Data#targetSetupPool"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#weighingEventPool -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#weighingEventPool">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Data#DataPool"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Data#weighingEvent_ball1"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Data#weighingEvent_ball2"/>
+        <UA_Foundation:hasGenericDependent rdf:resource="http://example.com/project/description/UTP_Description_Data#weighingEventPool_session"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#weighingEventPool_session -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#weighingEventPool_session">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Information#DescriptiveInformationEntity"/>
+        <UA_Information:describes rdf:resource="http://example.com/project/description/UTP_Description_Data#weighingEventPool"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#weighingEvent_ball1 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#weighingEvent_ball1">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Data#DataItem"/>
+        <UA_Foundation:hasGenericDependent rdf:resource="http://example.com/project/description/UTP_Description_Data#weighingEvent_ball1_time"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Data#weighingEventPool"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#weighingEvent_ball1_time -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#weighingEvent_ball1_time">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Information#DescriptiveInformationEntity"/>
+        <UA_Information:describes rdf:resource="http://example.com/project/description/UTP_Description_Data#weighingEvent_ball1"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#weighingEvent_ball2 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#weighingEvent_ball2">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Data#DataItem"/>
+        <UA_Foundation:hasGenericDependent rdf:resource="http://example.com/project/description/UTP_Description_Data#weighingEvent_ball2_time"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Data#weighingEventPool"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#weighingEvent_ball2_time -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#weighingEvent_ball2_time">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Core/UA_Information#DescriptiveInformationEntity"/>
+        <UA_Information:describes rdf:resource="http://example.com/project/description/UTP_Description_Data#weighingEvent_ball2"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Data#weighingScaleProvider -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Data#weighingScaleProvider">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Data#DataProvider"/>
+        <UA_Agent:hasInput rdf:resource="http://example.com/project/description/UTP_Description_Data#weighingEventPool"/>
+        <UA_Agent:hasOutput rdf:resource="http://example.com/project/description/UTP_Description_Data#metalBallMassDataPool"/>
+        <UA_Foundation:genericallyDependentOn rdf:resource="http://example.com/project/description/UTP_Description_Configuration#electronicAndMetalComponents"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.5.0.2023-01-14T12:41:38Z) https://github.com/owlcs/owlapi/ -->
+
+

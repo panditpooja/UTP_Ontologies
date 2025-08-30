@@ -1,0 +1,943 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://uaontologies.com/UA_Foundation/UA_Foundation#"
+     xml:base="http://uaontologies.com/UA_Foundation/UA_Foundation"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:oml="http://opencaesar.io/oml#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:foundation="http://uaontologies.com/UA_Foundation/UA_Foundation#">
+    <owl:Ontology rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation">
+        <owl:imports rdf:resource="http://purl.org/dc/elements/1.1"/>
+        <oml:namespace rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#"/>
+        <oml:prefix>foundation</oml:prefix>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Vocabulary"/>
+        <dc:contributor>Joe Gregory</dc:contributor>
+        <dc:creator>SIE Disruption Lab</dc:creator>
+        <dc:description>A vocabulary to capture the foundation terminology required by the SIE Disruption Lab. Note that this is essentially a simplified version of gUFO.</dc:description>
+        <dc:hasVersion>0.1</dc:hasVersion>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://opencaesar.io/oml#relationBase -->
+
+
+    <owl:AnnotationProperty rdf:about="http://opencaesar.io/oml#relationBase"/>
+    
+
+
+    <!-- http://opencaesar.io/oml#relationEntity -->
+
+
+    <owl:AnnotationProperty rdf:about="http://opencaesar.io/oml#relationEntity"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://opencaesar.io/oml#hasSource -->
+
+
+    <owl:ObjectProperty rdf:about="http://opencaesar.io/oml#hasSource"/>
+    
+
+
+    <!-- http://opencaesar.io/oml#hasTarget -->
+
+
+    <owl:ObjectProperty rdf:about="http://opencaesar.io/oml#hasTarget"/>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#contains -->
+
+
+    <owl:ObjectProperty rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#contains">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Container"/>
+        <rdfs:range rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#ContainedElement"/>
+        <oml:relationEntity rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Contains"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ForwardRelation"/>
+        <rdfs:label>contains</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#genericallyDependentOn -->
+
+
+    <owl:ObjectProperty rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#genericallyDependentOn">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#GenericallyDependentContinuant"/>
+        <rdfs:range rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier"/>
+        <oml:relationEntity rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#GenericallyDependentOn"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ForwardRelation"/>
+        <rdfs:label>generically dependent on</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#hasGenericDependent -->
+
+
+    <owl:ObjectProperty rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#hasGenericDependent">
+        <owl:inverseOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#genericallyDependentOn"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier"/>
+        <rdfs:range rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#GenericallyDependentContinuant"/>
+        <oml:relationBase rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#GenericallyDependentOn"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ReverseRelation"/>
+        <rdfs:label>has generic dependent</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#hasSpecificDependent -->
+
+
+    <owl:ObjectProperty rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#hasSpecificDependent">
+        <owl:inverseOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#specificallyDependentOn"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier"/>
+        <rdfs:range rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#SpecificallyDependentContinuant"/>
+        <oml:relationBase rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#SpecificallyDependentOn"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ReverseRelation"/>
+        <rdfs:label>has specific dependent</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#isContainedIn -->
+
+
+    <owl:ObjectProperty rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#isContainedIn">
+        <owl:inverseOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#contains"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#ContainedElement"/>
+        <rdfs:range rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Container"/>
+        <oml:relationBase rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Contains"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ReverseRelation"/>
+        <rdfs:label>is contained in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#isOccupiedBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#isOccupiedBy">
+        <owl:inverseOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#occupies"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Site"/>
+        <rdfs:range rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#MaterialEntity"/>
+        <oml:relationBase rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Occupies"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ReverseRelation"/>
+        <rdfs:label>is occupied by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#occupies -->
+
+
+    <owl:ObjectProperty rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#occupies">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#MaterialEntity"/>
+        <rdfs:range rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Site"/>
+        <oml:relationEntity rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Occupies"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ForwardRelation"/>
+        <rdfs:label>occupies</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#specificallyDependentOn -->
+
+
+    <owl:ObjectProperty rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#specificallyDependentOn">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#SpecificallyDependentContinuant"/>
+        <rdfs:range rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier"/>
+        <oml:relationEntity rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#SpecificallyDependentOn"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ForwardRelation"/>
+        <rdfs:label>specifically dependent on</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#hasBeginInstant -->
+
+
+    <owl:DatatypeProperty rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#hasBeginInstant">
+        <rdfs:domain rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#TemporalRegion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <dc:description>[=hasBeginInstant=] ...</dc:description>
+        <rdfs:label>has begin instant</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#hasEndInstant -->
+
+
+    <owl:DatatypeProperty rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#hasEndInstant">
+        <rdfs:domain rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#TemporalRegion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <dc:description>[=hasEndInstant=] ...</dc:description>
+        <rdfs:label>has end instant</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#hasID -->
+
+
+    <owl:DatatypeProperty rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#hasID">
+        <rdfs:domain rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:description>[=hasID=] is a FOUNDATIONAL scalar property - all entities can have an ID</dc:description>
+        <rdfs:label>has ID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#hasName -->
+
+
+    <owl:DatatypeProperty rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#hasName">
+        <rdfs:domain rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:description>[=hasName=] is a FOUNDATIONAL scalar property - all entities can have a name</dc:description>
+        <rdfs:label>has name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#hasNaturalLanguageDescription -->
+
+
+    <owl:DatatypeProperty rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#hasNaturalLanguageDescription">
+        <rdfs:domain rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:description>[=hasNaturalLanguageDescription=] is a FOUNDATIONAL scalar property - all entities can have a natural language description</dc:description>
+        <rdfs:label>has natural language description</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#ContainedElement -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#ContainedElement">
+        <oml:type rdf:resource="http://opencaesar.io/oml#Aspect"/>
+        <rdfs:label>Contained Element</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#Container -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#Container">
+        <oml:type rdf:resource="http://opencaesar.io/oml#Aspect"/>
+        <rdfs:label>Container</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#Contains -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#Contains">
+        <oml:type rdf:resource="http://opencaesar.io/oml#RelationEntity"/>
+        <dc:description>[=Contains=] is a...</dc:description>
+        <rdfs:label>Contains</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+        <rdfs:label>Continuant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#Disposition -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#Disposition">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#RealizableEntity"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+        <rdfs:label>Disposition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#Energy -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#Energy">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#ImmaterialEntity"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+        <rdfs:label>Energy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#Function -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#Function">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#ContainedElement"/>
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Container"/>
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Disposition"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#contains"/>
+                <owl:allValuesFrom rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Function"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#isContainedIn"/>
+                <owl:allValuesFrom rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Function"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+        <rdfs:label>Function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier">
+        <oml:type rdf:resource="http://opencaesar.io/oml#Aspect"/>
+        <rdfs:label>GDC Carrier</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#GenericallyDependentContinuant -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#GenericallyDependentContinuant">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+        <rdfs:label>Generically Dependent Continuant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#GenericallyDependentOn -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#GenericallyDependentOn">
+        <oml:type rdf:resource="http://opencaesar.io/oml#RelationEntity"/>
+        <dc:description>[=GenericallyDependentOn=] is a...</dc:description>
+        <rdfs:label>Generically Dependent On</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity">
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+        <rdfs:label>IdentifiedEntity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#ImmaterialEntity -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#ImmaterialEntity">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#IndependentContinuant"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+        <rdfs:label>Immaterial Entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#IndependentContinuant -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#IndependentContinuant">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant"/>
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier"/>
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+        <rdfs:label>Independent Continuant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#MaterialEntity -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#MaterialEntity">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#ContainedElement"/>
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#IndependentContinuant"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+        <rdfs:label>Material Entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#Object -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#Object">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#MaterialEntity"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+        <rdfs:label>Object</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#ObjectAggregate -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#ObjectAggregate">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Container"/>
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#MaterialEntity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#contains"/>
+                <owl:allValuesFrom rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#MaterialEntity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#isContainedIn"/>
+                <owl:allValuesFrom rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#ObjectAggregate"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+        <rdfs:label>Object Aggregate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#Occupies -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#Occupies">
+        <oml:type rdf:resource="http://opencaesar.io/oml#RelationEntity"/>
+        <dc:description>[=Occupies=] is a...</dc:description>
+        <rdfs:label>Occupies</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#Occurrent -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#Occurrent">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#ContainedElement"/>
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Container"/>
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier"/>
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity"/>
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#contains"/>
+                <owl:allValuesFrom rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Occurrent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#isContainedIn"/>
+                <owl:allValuesFrom rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Occurrent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+        <rdfs:label>Occurrent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#Process -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#Process">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#ContainedElement"/>
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Container"/>
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Occurrent"/>
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#contains"/>
+                <owl:allValuesFrom rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Process"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#isContainedIn"/>
+                <owl:allValuesFrom rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Process"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+        <rdfs:label>Process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#Quality -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#Quality">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#SpecificallyDependentContinuant"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+        <rdfs:label>Quality</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#RealizableEntity -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#RealizableEntity">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#SpecificallyDependentContinuant"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+        <rdfs:label>Realizable Entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#Role -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#Role">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#ContainedElement"/>
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Container"/>
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#GenericallyDependentContinuant"/>
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#contains"/>
+                <owl:allValuesFrom rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Role"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#isContainedIn"/>
+                <owl:allValuesFrom rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Role"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+        <rdfs:label>Role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier">
+        <oml:type rdf:resource="http://opencaesar.io/oml#Aspect"/>
+        <rdfs:label>SDC Carrier</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#Site -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#Site">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#ContainedElement"/>
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Container"/>
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#ImmaterialEntity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#contains"/>
+                <owl:allValuesFrom rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Site"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#isContainedIn"/>
+                <owl:allValuesFrom rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Site"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+        <rdfs:label>Site</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#SpecificallyDependentContinuant -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#SpecificallyDependentContinuant">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant"/>
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier"/>
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#specificallyDependentOn"/>
+                <owl:someValuesFrom rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+        <rdfs:label>Specifically Dependent Continuant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#SpecificallyDependentOn -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#SpecificallyDependentOn">
+        <oml:type rdf:resource="http://opencaesar.io/oml#RelationEntity"/>
+        <dc:description>[=SpecificallyDependentOn=] is a...</dc:description>
+        <rdfs:label>Specifically Dependent On</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#TemporalRegion -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#TemporalRegion">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#ContainedElement"/>
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Container"/>
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Occurrent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#contains"/>
+                <owl:allValuesFrom rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#TemporalRegion"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#isContainedIn"/>
+                <owl:allValuesFrom rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#TemporalRegion"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+        <rdfs:label>Temporal Region</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="urn:swrl:var#r">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#s">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#t">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:label>contains derivation</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Contains"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#r"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://opencaesar.io/oml#hasSource"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#r"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#s"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://opencaesar.io/oml#hasTarget"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#r"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#t"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#contains"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#s"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#t"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:label>genericallyDependentOn derivation</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#GenericallyDependentOn"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#r"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://opencaesar.io/oml#hasSource"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#r"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#s"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://opencaesar.io/oml#hasTarget"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#r"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#t"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#genericallyDependentOn"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#s"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#t"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:label>occupies derivation</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Occupies"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#r"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://opencaesar.io/oml#hasSource"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#r"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#s"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://opencaesar.io/oml#hasTarget"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#r"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#t"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#occupies"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#s"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#t"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:label>specificallyDependentOn derivation</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#SpecificallyDependentOn"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#r"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://opencaesar.io/oml#hasSource"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#r"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#s"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://opencaesar.io/oml#hasTarget"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#r"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#t"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#specificallyDependentOn"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#s"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#t"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.5.0.2023-01-14T12:41:38Z) https://github.com/owlcs/owlapi/ -->
+
+

@@ -1,0 +1,87 @@
+@dc:creator "SIE Disruption Lab"
+@dc:contributor "Joe Gregory"
+@dc:description "A vocabulary to capture mission patterns"
+@dc:hasVersion "0.1"
+vocabulary <http://uaontologies.com/UA_Domain/UA_Mission#> as UA_Mission {
+	
+	////////////////////////////////////////////////////////////////////////////////////
+	
+	/////// Vocabulary Imports ///////
+	
+	
+	// Import standard vocabularies	
+	
+    extends <http://purl.org/dc/elements/1.1/> as dc
+    extends <http://www.w3.org/2000/01/rdf-schema#> as rdfs
+    //extends <http://www.w3.org/2001/XMLSchema#> as xsd
+    
+    // Import relevant vocabularies
+    
+    extends <http://uaontologies.com/UA_Foundation/UA_Foundation#> as foundation
+	
+	//extends <http://uaontologies.com/UA_Core/UA_Information#> as info
+	//extends <http://uaontologies.com/UA_Core/UA_Agent#> as agent
+	//extends <http://uaontologies.com/UA_Core/UA_Event#> as event
+	//extends <http://uaontologies.com/UA_Core/UA_Measurement#> as meas
+	//extends <http://uaontologies.com/UA_Core/UA_Provenance#> as prov
+	
+	
+	
+	///////////////////////////////////////////////////////////////////////////////////
+	
+	/////// Vocabulary Definitions ///////
+	
+	///// Aspects
+	
+	
+	
+	///// Concepts
+	
+	@rdfs:label "Mission"
+	@dc:description "A [=Mission=]..."
+	concept Mission < foundation:Occurrent
+	
+	@rdfs:label "Environment"
+	@dc:description "A [=Environment=]..."
+	concept Environment < foundation:ObjectAggregate
+	
+	
+	
+	///// Relations
+	
+	@rdfs:label "Participates In Mission"
+	@dc:description "[=ParticipatesInMission=] is a..."
+	relation entity ParticipatesInMission [
+		from foundation:Continuant
+		to Mission
+		@rdfs:label "participates in"
+		forward participatesIn
+		@rdfs:label "has mission participant"
+		reverse hasMissionParticipant
+		asymmetric
+		irreflexive
+	]
+	
+	@rdfs:label "Has Environment"
+	@dc:description "[=HasEnvironment=] is a..."
+	relation entity HasEnvironment [
+		from Mission
+		to Environment
+		@rdfs:label "has environment"
+		forward hasEnvironment
+		@rdfs:label "is environment of"
+		reverse isEnvironmentOf
+		asymmetric
+		irreflexive
+	]
+	
+	
+	
+	///// Scalar Properties
+	
+	
+	
+	///// Rules
+		
+	
+}

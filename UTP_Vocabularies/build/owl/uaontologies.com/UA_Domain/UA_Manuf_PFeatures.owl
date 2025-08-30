@@ -1,0 +1,359 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#"
+     xml:base="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:oml="http://opencaesar.io/oml#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:UA_Manuf_P="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#">
+    <owl:Ontology rdf:about="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures">
+        <owl:imports rdf:resource="http://purl.org/dc/elements/1.1"/>
+        <owl:imports rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement"/>
+        <owl:imports rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation"/>
+        <oml:namespace rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#"/>
+        <oml:prefix>UA_Manuf_P</oml:prefix>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Vocabulary"/>
+        <dc:contributor>Joe Gregory</dc:contributor>
+        <dc:creator>SIE Disruption Lab</dc:creator>
+        <dc:description>A vocabulary to capture manufacturing information</dc:description>
+        <dc:hasVersion>0.1</dc:hasVersion>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#AdditivePFeature -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#AdditivePFeature">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#ManufacturingPFeature"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#Bend -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#Bend">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#MaterialFormPFeature"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#Blind -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#Blind">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#ShapeQuality"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#specificallyDependentOn"/>
+                <owl:someValuesFrom rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#BlindHole"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#specificallyDependentOn"/>
+                <owl:allValuesFrom rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#BlindHole"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#BlindHole -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#BlindHole">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#Hole"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#CompoundHole -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#CompoundHole">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#Hole"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#DeformationPFeature -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#DeformationPFeature">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#ManufacturingPFeature"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#FormPFeature -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#FormPFeature">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#PFeature"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#Hole -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#Hole">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#VoidFormPFeature"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#JointPFeature -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#JointPFeature">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#ManufacturingPFeature"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#MachiningPFeature -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#MachiningPFeature">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#ManufacturingPFeature"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#ManufacturingPFeature -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#ManufacturingPFeature">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#PFeature"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#MaterialFormPFeature -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#MaterialFormPFeature">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#FormPFeature"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#PFeature -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#PFeature">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Quality"/>
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#specificallyDependentOn"/>
+                <owl:someValuesFrom rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#MaterialEntity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#specificallyDependentOn"/>
+                <owl:allValuesFrom rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#MaterialEntity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#Protrusion -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#Protrusion">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#MaterialFormPFeature"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#ShapeQuality -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#ShapeQuality">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Quality"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#specificallyDependentOn"/>
+                <owl:someValuesFrom rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#FormPFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#specificallyDependentOn"/>
+                <owl:allValuesFrom rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#FormPFeature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#Slot -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#Slot">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#VoidFormPFeature"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#Through -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#Through">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#ShapeQuality"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#specificallyDependentOn"/>
+                <owl:someValuesFrom rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#ThroughHole"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#specificallyDependentOn"/>
+                <owl:allValuesFrom rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#ThroughHole"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#ThroughHole -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#ThroughHole">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#Hole"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#VoidFormPFeature -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#VoidFormPFeature">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#FormPFeature"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#Weld -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#Weld">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#JointPFeature"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#WeldFinish -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#WeldFinish">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement#Quantity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#specificallyDependentOn"/>
+                <owl:someValuesFrom rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#Weld"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#WeldIntermittance -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#WeldIntermittance">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement#Quantity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#specificallyDependentOn"/>
+                <owl:someValuesFrom rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#Weld"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#WeldSize -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#WeldSize">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Core/UA_Measurement#Quantity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#specificallyDependentOn"/>
+                <owl:someValuesFrom rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#Weld"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#1DFeature -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#1DFeature">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#MachiningPFeature"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#2.5DFeature -->
+
+
+    <owl:Class rdf:about="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#2.5DFeature">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#MachiningPFeature"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.5.0.2023-01-14T12:41:38Z) https://github.com/owlcs/owlapi/ -->
+
+

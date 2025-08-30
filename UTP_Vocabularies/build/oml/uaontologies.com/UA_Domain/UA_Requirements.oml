@@ -1,0 +1,216 @@
+@dc:creator "SIE Disruption Lab"
+@dc:contributor "Joe Gregory"
+@dc:description "A vocabulary to capture system requirements patterns"
+@dc:hasVersion "0.1"
+vocabulary <http://uaontologies.com/UA_Domain/UA_Requirements#> as UA_Requirements {
+	
+	////////////////////////////////////////////////////////////////////////////////////
+	
+	/////// Vocabulary Imports ///////
+	
+	
+	// Import standard vocabularies	
+	
+    extends <http://purl.org/dc/elements/1.1/> as dc
+    extends <http://www.w3.org/2000/01/rdf-schema#> as rdfs
+    extends <http://www.w3.org/2001/XMLSchema#> as xsd
+    
+    // Import relevant vocabularies
+    
+    extends <http://uaontologies.com/UA_Foundation/UA_Foundation#> as foundation
+	
+	extends <http://uaontologies.com/UA_Core/UA_Information#> as info
+	//extends <http://uaontologies.com/UA_Core/UA_Agent#> as agent
+	//extends <http://uaontologies.com/UA_Core/UA_Event#> as event
+	extends <http://uaontologies.com/UA_Core/UA_Measurement#> as meas
+	//extends <http://uaontologies.com/UA_Core/UA_Provenance#> as prov
+	
+	
+	///////////////////////////////////////////////////////////////////////////////////
+	
+	/////// Vocabulary Definitions ///////
+	
+	///// Aspects
+	
+	@rdfs:label "Verification Method"
+	@dc:description "A [=VerificationMethod=]..."
+	aspect VerificationMethod
+
+	
+	
+	///// Concepts
+	
+	@rdfs:label "Requirement"
+	@dc:description "A [=Requirement=]..."
+	concept Requirement < info:PrescriptiveInformationEntity
+	
+	@rdfs:label "Objective"
+	@dc:description "A [=Objective=]..."
+	concept Objective < info:PrescriptiveInformationEntity
+	
+	@rdfs:label "Constraint"
+	@dc:description "A [=Constraint=]..."
+	concept Constraint < info:PrescriptiveInformationEntity
+	
+	@rdfs:label "ConstraintParameter"
+	@dc:description "A [=ConstraintParameter=]..."
+	concept ConstraintParameter < meas:Quantity
+	
+	@rdfs:label "Quantitative Requirement"
+	@dc:description "A [=QuantitativeRequirement=]..."
+	concept QuantitativeRequirement < Requirement [
+		restricts all info:prescribes to foundation:Quality
+	]
+	
+	@rdfs:label "Functional Requirement"
+	@dc:description "A [=FunctionalRequirement=]..."
+	concept FunctionalRequirement < Requirement
+	
+	@rdfs:label "Performance Requirement"
+	@dc:description "A [=PerformanceRequirement=]..."
+	concept PerformanceRequirement < QuantitativeRequirement
+	
+	@rdfs:label "Physical Requirement"
+	@dc:description "A [=PhysicalRequirement=]..."
+	concept PhysicalRequirement < QuantitativeRequirement
+	
+	@rdfs:label "KPP"
+	@dc:description "A [=KPP=]..."
+	concept KPP < PerformanceRequirement
+	
+	@rdfs:label "KSA"
+	@dc:description "A [=KSA=]..."
+	concept KSA < QuantitativeRequirement
+	
+	
+	///// Relations
+	
+	@rdfs:label "Refines"
+	@dc:description "[=Refines=] is a "
+	relation entity Refines [
+		from Constraint
+		to QuantitativeRequirement
+		@rdfs:label "refines"
+		forward refines
+		@rdfs:label "is refined by"
+		reverse isRefinedBy
+		asymmetric
+		irreflexive
+	]
+	
+	@rdfs:label "Parameter Owned By"
+	@dc:description "[=ParameterOwnedBy=] is a "
+	relation entity ParameterOwnedBy  [
+		from ConstraintParameter
+		to Constraint
+		@rdfs:label "parameter owned by"
+		forward parameterOwnedBy
+		@rdfs:label "owns parameter"
+		reverse ownsParameter
+		asymmetric
+		irreflexive
+	]
+	< foundation:SpecificallyDependentOn
+	
+	@rdfs:label "Derives Requirement"
+	@dc:description "[=DerivesRequirement=] is a "
+	relation entity DerivesRequirement [
+		from Requirement
+		to Requirement
+		@rdfs:label "derives requirement"
+		forward derivesRequirement
+		@rdfs:label "requirement derived from"
+		reverse requirementDerivedFrom
+		asymmetric
+		irreflexive
+	]
+	
+	@rdfs:label "Satisfies"
+	@dc:description "[=Satisfies=] is a "
+	relation entity Satisfies [
+		from foundation:IdentifiedEntity
+		to Requirement
+		@rdfs:label "satisfies"
+		forward satisfies
+		@rdfs:label "is satisfied by"
+		reverse isSatisfiedBy
+		asymmetric
+		irreflexive
+	]
+	
+	@rdfs:label "Verifies"
+	@dc:description "[=Verifies=] is a "
+	relation entity Verifies [
+		from VerificationMethod
+		to Requirement
+		@rdfs:label "verifies"
+		forward verifies
+		@rdfs:label "is verified by"
+		reverse isVerifiedBy
+		asymmetric
+		irreflexive
+	]
+	
+	@rdfs:label "Has Threshold Value"
+	@dc:description "[=HasThresholdValue=] is a "
+	relation entity HasThresholdValue [
+		from QuantitativeRequirement
+		to meas:SimpleMeasurement
+		@rdfs:label "has threshold value"
+		forward hasThresholdValue
+		@rdfs:label "is threshold value of"
+		reverse isThresholdValueOf
+		asymmetric
+		irreflexive
+	]
+	
+	@rdfs:label "Has Objective Value"
+	@dc:description "[=HasObjectiveValue=] is a "
+	relation entity HasObjectiveValue [
+		from QuantitativeRequirement
+		to meas:SimpleMeasurement
+		@rdfs:label "has objective value"
+		forward hasObjectiveValue
+		@rdfs:label "is objective value of"
+		reverse isObjectiveValueOf
+		asymmetric
+		irreflexive
+	]
+	
+	
+	///// Scalar Properties
+	
+	@rdfs:label "has requirement text"
+	@dc:description "[=hasRequirementText=] ..."
+	scalar property hasRequirementText [
+		domain Requirement
+		range xsd:string
+	]
+	
+	@rdfs:label "has objective text"
+	@dc:description "[=hasObjectiveText=] ..."
+	scalar property hasObjectiveText [
+		domain Objective
+		range xsd:string
+	]
+	
+	@rdfs:label "has constraint expression"
+	@dc:description "[=hasConstraintExpression=] ..."
+	scalar property hasConstraintExpression [
+		domain Constraint
+		range xsd:string
+	]
+	
+	@rdfs:label "has verification status"
+	@dc:description "[=hasVerificationStatus=] ..."
+	scalar property hasVerificationStatus [
+		domain Requirement
+		range xsd:string
+	]
+	
+	
+	
+	///// Rules
+
+	
+}

@@ -1,0 +1,374 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://example.com/project/description/UTP_Description_Configuration#"
+     xml:base="http://example.com/project/description/UTP_Description_Configuration"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:oml="http://opencaesar.io/oml#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:UA_Foundation="http://uaontologies.com/UA_Foundation/UA_Foundation#"
+     xmlns:UA_Information="http://uaontologies.com/UA_Core/UA_Information#"
+     xmlns:utp_desc_config="http://example.com/project/description/UTP_Description_Configuration#">
+    <owl:Ontology rdf:about="http://example.com/project/description/UTP_Description_Configuration">
+        <owl:imports rdf:resource="http://example.com/project/description/UTP_Description_Process"/>
+        <owl:imports rdf:resource="http://example.com/project/vocabulary/UTP_Configuration"/>
+        <owl:imports rdf:resource="http://uaontologies.com/UA_Core/UA_Information"/>
+        <owl:imports rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation"/>
+        <oml:namespace rdf:resource="http://example.com/project/description/UTP_Description_Configuration#"/>
+        <oml:prefix>utp_desc_config</oml:prefix>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Description"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://opencaesar.io/oml#namespace -->
+
+
+    <owl:AnnotationProperty rdf:about="http://opencaesar.io/oml#namespace"/>
+    
+
+
+    <!-- http://opencaesar.io/oml#prefix -->
+
+
+    <owl:AnnotationProperty rdf:about="http://opencaesar.io/oml#prefix"/>
+    
+
+
+    <!-- http://opencaesar.io/oml#type -->
+
+
+    <owl:AnnotationProperty rdf:about="http://opencaesar.io/oml#type"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://uaontologies.com/UA_Core/UA_Information#prescribes -->
+
+
+    <owl:ObjectProperty rdf:about="http://uaontologies.com/UA_Core/UA_Information#prescribes"/>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#contains -->
+
+
+    <owl:ObjectProperty rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#contains"/>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#genericallyDependentOn -->
+
+
+    <owl:ObjectProperty rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#genericallyDependentOn"/>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#isContainedIn -->
+
+
+    <owl:ObjectProperty rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#isContainedIn"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Configuration#catapult -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Configuration#catapult">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Configuration#TestItem"/>
+        <UA_Foundation:genericallyDependentOn rdf:resource="http://example.com/project/description/UTP_Description_Configuration#wood"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Configuration#catapultAccuracyTestConfig -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Configuration#catapultAccuracyTestConfig">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Configuration#TestConfiguration"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Process#catapultAccuracyTest"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Configuration#catapultConfig_forAccuracy"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Configuration#measurementTapeConfig_forAccuracy"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Configuration#metalBallConfig_forAccuracy"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Configuration#weighingScaleConfig_forAccuracy"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Configuration#catapultConfig_forAccuracy -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Configuration#catapultConfig_forAccuracy">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Configuration#TestItemConfiguration"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Configuration#catapult"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Configuration#catapultAccuracyTestConfig"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Configuration#catapultConfig_forMass -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Configuration#catapultConfig_forMass">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Configuration#TestItemConfiguration"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Configuration#catapult"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Configuration#catapultMassTestConfig"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Configuration#catapultConfig_forRange -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Configuration#catapultConfig_forRange">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Configuration#TestItemConfiguration"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Configuration#catapult"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Configuration#catapultRangeTestConfig"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Configuration#catapultMassTestConfig -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Configuration#catapultMassTestConfig">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Configuration#TestConfiguration"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Process#catapultMassTest"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Configuration#catapultConfig_forMass"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Configuration#metalBallConfig_forMass"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Configuration#weighingScaleConfig_forMass"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Configuration#catapultRangeTestConfig -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Configuration#catapultRangeTestConfig">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Configuration#TestConfiguration"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Process#catapultRangeTest"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Configuration#catapultConfig_forRange"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Configuration#measurementTapeConfig_forRange"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Configuration#metalBallConfig_forRange"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Configuration#weighingScaleConfig_forRange"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Configuration#electronicAndMetalComponents -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Configuration#electronicAndMetalComponents">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#MaterialEntity"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Configuration#measurementTape -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Configuration#measurementTape">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Configuration#TestComponent"/>
+        <UA_Foundation:genericallyDependentOn rdf:resource="http://example.com/project/description/UTP_Description_Configuration#plasticMaterial"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Configuration#measurementTapeConfig_forAccuracy -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Configuration#measurementTapeConfig_forAccuracy">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Configuration#TestComponentConfiguration"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Configuration#measurementTape"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Configuration#catapultAccuracyTestConfig"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Configuration#measurementTapeConfig_forRange -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Configuration#measurementTapeConfig_forRange">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Configuration#TestComponentConfiguration"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Configuration#measurementTape"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Configuration#catapultRangeTestConfig"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Configuration#metalBall -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Configuration#metalBall">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Configuration#TestComponent"/>
+        <UA_Foundation:genericallyDependentOn rdf:resource="http://example.com/project/description/UTP_Description_Configuration#steelBallMaterial"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Configuration#metalBallConfig_forAccuracy -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Configuration#metalBallConfig_forAccuracy">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Configuration#TestComponentConfiguration"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Configuration#metalBall"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Configuration#catapultAccuracyTestConfig"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Configuration#metalBallConfig_forMass -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Configuration#metalBallConfig_forMass">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Configuration#TestComponentConfiguration"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Configuration#metalBall"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Configuration#catapultMassTestConfig"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Configuration#metalBallConfig_forRange -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Configuration#metalBallConfig_forRange">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Configuration#TestComponentConfiguration"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Configuration#metalBall"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Configuration#catapultRangeTestConfig"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Configuration#plasticMaterial -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Configuration#plasticMaterial">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#MaterialEntity"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Configuration#steelBallMaterial -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Configuration#steelBallMaterial">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#MaterialEntity"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Configuration#weighingScale -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Configuration#weighingScale">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Configuration#TestComponent"/>
+        <UA_Foundation:genericallyDependentOn rdf:resource="http://example.com/project/description/UTP_Description_Configuration#electronicAndMetalComponents"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Configuration#weighingScaleConfig_forAccuracy -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Configuration#weighingScaleConfig_forAccuracy">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Configuration#TestComponentConfiguration"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Configuration#weighingScale"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Configuration#catapultAccuracyTestConfig"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Configuration#weighingScaleConfig_forMass -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Configuration#weighingScaleConfig_forMass">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Configuration#TestComponentConfiguration"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Configuration#weighingScale"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Configuration#catapultMassTestConfig"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Configuration#weighingScaleConfig_forRange -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Configuration#weighingScaleConfig_forRange">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Configuration#TestComponentConfiguration"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Configuration#weighingScale"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Configuration#catapultRangeTestConfig"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Configuration#wood -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Configuration#wood">
+        <rdf:type rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#MaterialEntity"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.5.0.2023-01-14T12:41:38Z) https://github.com/owlcs/owlapi/ -->
+
+

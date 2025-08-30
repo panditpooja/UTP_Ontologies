@@ -1,0 +1,79 @@
+@dc:creator "SIE Disruption Lab"
+@dc:contributor "Joe Gregory"
+@dc:description "A vocabulary to capture manufacturing information"
+@dc:hasVersion "0.1"
+vocabulary <http://uaontologies.com/UA_Domain/UA_Manuf_Processes#> as UA_Manuf_Processes {
+	
+	////////////////////////////////////////////////////////////////////////////////////
+	
+	/////// Vocabulary Imports ///////
+	
+	
+	// Import standard vocabularies	
+	
+    extends <http://purl.org/dc/elements/1.1/> as dc
+    //extends <http://www.w3.org/2000/01/rdf-schema#> as rdfs
+    //extends <http://www.w3.org/2001/XMLSchema#> as xsd
+    
+    // Import relevant vocabularies
+    
+    extends <http://uaontologies.com/UA_Foundation/UA_Foundation#> as foundation
+	
+	//extends <http://uaontologies.com/UA_Core/UA_Information#> as info
+	extends <http://uaontologies.com/UA_Core/UA_Agent#> as agent
+	extends <http://uaontologies.com/UA_Core/UA_Event#> as event
+	extends <http://uaontologies.com/UA_Core/UA_Measurement#> as meas
+	//extends <http://uaontologies.com/UA_Core/UA_Provenance#> as prov
+	
+	//extends <http://uaontologies.com/UA_Domain/UA_SystemArchitecture#> as sa
+	//extends <http://uaontologies.com/UA_Domain/UA_Mission#> as mission
+	//extends <http://uaontologies.com/UA_Domain/UA_Requirements#> as req
+	//extends <http://uaontologies.com/UA_Domain/UA_Test#> as test
+	//extends <http://uaontologies.com/UA_Domain/UA_Software#> as sw
+	
+	extends <http://uaontologies.com/UA_Domain/UA_Manuf_PFeatures#> as man_p
+		
+	
+	///////////////////////////////////////////////////////////////////////////////////
+	
+	/////// Vocabulary Definitions ///////
+	
+	///// Aspects
+	
+			
+	
+	///// Concepts
+	
+	concept Capability < foundation:Disposition, foundation:SDCCarrier [
+		restricts some foundation:specificallyDependentOn to agent:Agent
+		restricts all foundation:specificallyDependentOn to agent:Agent
+		restricts all event:manifestsIn to foundation:Process
+	]
+	
+	concept ProductProductionProcess < foundation:Process
+	
+	concept ManufacturingOperation < foundation:Process [
+		restricts all foundation:contains to ProductProductionProcess
+	]
+	
+	concept ManufacturingProcess < foundation:Process [
+		restricts all foundation:contains to ManufacturingOperation
+	]
+	
+	concept WeldingProcess < ManufacturingProcess [
+		restricts some agent:hasOutput to man_p:Weld
+	]
+	
+	concept WeldingCapability < Capability [
+		restricts some foundation:hasSpecificDependent to MinWeldSize
+		restricts some foundation:hasSpecificDependent to MaxWeldSize
+		restricts some foundation:hasSpecificDependent to WeldFinish
+	]
+	
+	concept MinWeldSize < meas:Quantity
+	
+	concept MaxWeldSize < meas:Quantity
+	
+	concept WeldFinish < meas:Quantity
+	
+}

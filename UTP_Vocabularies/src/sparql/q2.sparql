@@ -1,0 +1,32 @@
+PREFIX utp_process: <http://example.com/project/vocabulary/UTP_Process#>
+PREFIX utp_proc: <http://example.com/project/vocabulary/UTP_Procedure#>
+PREFIX utp_config: <http://example.com/project/vocabulary/UTP_Configuration#>
+PREFIX utp_desc_proc: <http://example.com/project/description/UTP_Description_Process#>
+PREFIX utp_desc_config: <http://example.com/project/description/UTP_Description_Configuration#>
+PREFIX foundation: <http://uaontologies.com/UA_Foundation/UA_Foundation#>
+PREFIX info: <http://uaontologies.com/UA_Core/UA_Information#>
+
+SELECT ?testSet ?testCase ?verdictValue ?requiredEquipment
+WHERE {
+    ## 1. Get the basic test hierarchy and verdict ##
+    ?testSet a utp_process:TestSet .
+    ?testSet foundation:contains ?testCase .
+    ?testCaseLog info:describes ?testCase .
+    ?testCaseLog foundation:contains ?verdict .
+    ?verdict utp_process:hasVerdictValue ?verdictValue .
+
+    ## 2. Conditionally find the equipment ONLY for tests that need to be re-run ##
+    OPTIONAL {
+        # FILTER: This line ensures the block only runs for "None" or "Inconclusive" verdicts.
+        ?verdict a ?verdictType .
+        FILTER(?verdictType IN (utp_process:NoneVerdict, utp_process:InconclusiveVerdict))
+
+        # If the filter passes, find all the required equipment for that specific test case.
+        ?proc info:prescribes ?testCase .
+        ?proc utp_proc:runsOn ?config .
+        ?config foundation:contains ?compConfig .
+        ?compConfig info:prescribes ?requiredEquipment .
+        ?requiredEquipment a utp_config:TestComponent .
+    }
+}
+ORDER BY ?testSet ?testCase

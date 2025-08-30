@@ -1,0 +1,732 @@
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.com/project/vocabulary/UTP_Procedure#TestExecutionSchedule>
+        rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/UTP_Procedure#isInvokedBy>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://example.com/project/vocabulary/UTP_Procedure#isInvokedBy> ;
+        owl:inverseOf       <http://example.com/project/vocabulary/UTP_Procedure#invokes> .
+
+<http://uaontologies.com/UA_Core/UA_Provenance#generatedAt>
+        rdf:type            owl:DatatypeProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Provenance#generatedAt> .
+
+<http://uaontologies.com/UA_Core/UA_Agent#ManagedProcess>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Information#isPrescribedBy>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Information#isSubjectOf> , <http://uaontologies.com/UA_Core/UA_Information#isPrescribedBy> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Information#prescribes> .
+
+<http://opencaesar.io/oml#hasSource>
+        rdf:type  owl:ObjectProperty .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#contains>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#contains> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Foundation/UA_Foundation#isContainedIn> .
+
+<http://uaontologies.com/UA_Core/UA_Information#Document>
+        rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/UTP_Data#Constraint>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Information#PrescriptiveInformationEntity>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Event#isParticipantOf>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Event#isParticipantOf> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Event#hasParticipant> .
+
+<http://uaontologies.com/UA_Core/UA_Agent#HasOrganizationalContext>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Agent#HasInput>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Information#InformationEntity>
+        rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/UTP_Data#ConformsTo>
+        rdf:type  owl:Class .
+
+owl:topDataProperty  rdf:type  owl:DatatypeProperty .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#hasNaturalLanguageDescription>
+        rdf:type            owl:DatatypeProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#hasNaturalLanguageDescription> .
+
+<http://uaontologies.com/UA_Core/UA_Agent#isOutputOf>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Agent#isOutputOf> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Agent#hasOutput> .
+
+<http://uaontologies.com/UA_Core/UA_Event#manifestsIn>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Event#manifestsIn> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Event#isManifestationOf> .
+
+<http://example.com/project/vocabulary/UTP_Process#TestSetLog>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Measurement#MeasurementOf>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#GenericallyDependentOn>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Agent#hasBelonging>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Agent#hasBelonging> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Agent#belongsTo> .
+
+<http://example.com/project/vocabulary/UTP_Process#PassVerdict>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Event#ManifestsIn>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Agent#HasOutput>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Event#OccursAt>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Measurement#HasApplicableDimension>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Event#OccursOn>
+        rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/UTP_Process#Verdict>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#hasName>
+        rdf:type            owl:DatatypeProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#hasName> .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#Function>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Ownership#Owns>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#SpecificallyDependentOn>
+        rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/UTP_Procedure#RunsOn>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Information#Prescribes>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Event#isManifestationOf>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Event#isManifestationOf> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Event#manifestsIn> .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#Object>
+        rdf:type  owl:Class .
+
+owl:topObjectProperty
+        rdf:type       owl:SymmetricProperty , owl:TransitiveProperty , owl:ObjectProperty ;
+        owl:inverseOf  owl:topObjectProperty .
+
+<http://example.com/project/vocabulary/UTP_Configuration#TestComponentConfiguration>
+        rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/UTP_Process#FailVerdict>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Event#HasParticipant>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Measurement#hasBooleanValue>
+        rdf:type            owl:DatatypeProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Measurement#hasValue> , <http://uaontologies.com/UA_Core/UA_Measurement#hasBooleanValue> .
+
+<http://uaontologies.com/UA_Core/UA_Agent#HasPlannedTemporalRegion>
+        rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/UTP_Configuration#TestConfiguration>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Agent#belongsTo>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Agent#belongsTo> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Agent#hasBelonging> .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#genericallyDependentOn>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#genericallyDependentOn> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Foundation/UA_Foundation#hasGenericDependent> .
+
+<http://uaontologies.com/UA_Core/UA_Agent#hasOrganizationalContext>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Agent#hasOrganizationalContext> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Agent#isOrganizationalContextOf> .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#hasSpecificDependent>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#hasSpecificDependent> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Foundation/UA_Foundation#specificallyDependentOn> .
+
+<http://uaontologies.com/UA_Core/UA_Agent#hasInput>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Agent#hasInput> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Agent#isInputOf> .
+
+<http://example.com/project/vocabulary/UTP_Process#TestCaseTeardown>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#Disposition>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Measurement#Range>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Provenance#GeneratedBy>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Agent#isOrganizationalContextOf>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Agent#isOrganizationalContextOf> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Agent#hasOrganizationalContext> .
+
+<http://example.com/project/vocabulary/UTP_Process#TestCaseLogStructure>
+        rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/UTP_Process#TestSetLogStructure>
+        rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/UTP_Configuration#TestComponent>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Information#InformationArtifact>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Measurement#hasApplicableDimension>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Information#describes> , <http://uaontologies.com/UA_Core/UA_Information#isAbout> , <http://uaontologies.com/UA_Core/UA_Measurement#hasApplicableDimension> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Measurement#isApplicableDimensionOf> .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#isContainedIn>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#isContainedIn> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Foundation/UA_Foundation#contains> .
+
+<http://uaontologies.com/UA_Core/UA_Provenance#generates>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Provenance#generates> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Provenance#generatedBy> .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity>
+        rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/UTP_Data#informs>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://example.com/project/vocabulary/UTP_Data#informs> ;
+        owl:inverseOf       <http://example.com/project/vocabulary/UTP_Data#isInformedBy> .
+
+<http://example.com/project/vocabulary/UTP_Data#DataSpecification>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#Contains>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Provenance#approvedBy>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Provenance#approvedBy> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Provenance#approves> .
+
+<http://uaontologies.com/UA_Core/UA_Measurement#Unit>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Measurement#isApplicableDimensionOf>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Information#isSubjectOf> , <http://uaontologies.com/UA_Core/UA_Information#isDescribedBy> , <http://uaontologies.com/UA_Core/UA_Measurement#isApplicableDimensionOf> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Measurement#hasApplicableDimension> .
+
+<http://uaontologies.com/UA_Core/UA_Event#occursBefore>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Event#occursBefore> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Event#occursAfter> .
+
+<http://uaontologies.com/UA_Core/UA_Agent#Agent>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#ObjectAggregate>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Event#occursAt>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Event#occursAt> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Event#isSiteOf> .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#IndependentContinuant>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#hasGenericDependent>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#hasGenericDependent> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Foundation/UA_Foundation#genericallyDependentOn> .
+
+<http://uaontologies.com/UA_Core/UA_Event#occursOn>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Event#occursOn> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Event#isTemporalRegionOf> .
+
+<http://example.com/project/vocabulary/UTP_Process#TestCase>
+        rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/UTP_Procedure#runsOn>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://example.com/project/vocabulary/UTP_Procedure#runsOn> ;
+        owl:inverseOf       <http://example.com/project/vocabulary/UTP_Procedure#isRunBy> .
+
+<http://uaontologies.com/UA_Core/UA_Information#isSubjectOf>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Information#isSubjectOf> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Information#isAbout> .
+
+<http://uaontologies.com/UA_Core/UA_Information#isAbout>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Information#isAbout> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Information#isSubjectOf> .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#Quality>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Agent#Consumer>
+        rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/UTP_Process#TestCaseLog>
+        rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/UTP_Procedure#TestProcedure>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#MaterialEntity>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Measurement#hasDimension>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Measurement#hasDimension> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Measurement#isDimensionOf> .
+
+<http://uaontologies.com/UA_Core/UA_Event#isTemporalRegionOf>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Event#isTemporalRegionOf> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Event#occursOn> .
+
+<http://uaontologies.com/UA_Core/UA_Agent#hasPlannedTemporalRegion>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Agent#hasPlannedTemporalRegion> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Agent#isPlannedTemporalRegionOf> .
+
+<http://uaontologies.com/UA_Core/UA_Measurement#isUnitOf>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Measurement#isUnitOf> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Measurement#hasUnit> .
+
+<http://uaontologies.com/UA_Core/UA_Agent#responsibleFor>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Agent#responsibleFor> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Agent#isResponsibilityOf> .
+
+<http://example.com/project/vocabulary/UTP_Process#TestAction>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Agent#Person>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Event#OccursBefore>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Agent#BelongsTo>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Measurement#Dimension>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Agent#isInputOf>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Agent#isInputOf> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Agent#hasInput> .
+
+<http://uaontologies.com/UA_Core/UA_Measurement#measuredBy>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Information#isSubjectOf> , <http://uaontologies.com/UA_Core/UA_Information#isDescribedBy> , <http://uaontologies.com/UA_Core/UA_Measurement#measuredBy> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Measurement#measurementOf> .
+
+<http://uaontologies.com/UA_Core/UA_Agent#Plan>
+        rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/UTP_Data#DataType>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Measurement#Measurement>
+        rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/UTP_Procedure#TestProcedureMain>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Measurement#ConfidenceInterval>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Event#occursAfter>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Event#occursAfter> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Event#occursBefore> .
+
+<http://example.com/project/vocabulary/UTP_Data#DataPool>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Information#Model>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Measurement#HasDimension>
+        rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/UTP_Data#DataProvider>
+        rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/UTP_Process#ErrorVerdict>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Provenance#approves>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Provenance#approves> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Provenance#approvedBy> .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#hasBeginInstant>
+        rdf:type            owl:DatatypeProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#hasBeginInstant> .
+
+<http://uaontologies.com/UA_Core/UA_Agent#Organization>
+        rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/UTP_Procedure#TestActionProcedure>
+        rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/UTP_Process#hasVerdictValue>
+        rdf:type            owl:FunctionalProperty , owl:DatatypeProperty ;
+        rdfs:subPropertyOf  <http://example.com/project/vocabulary/UTP_Process#hasVerdictValue> .
+
+<http://uaontologies.com/UA_Core/UA_Agent#ProcessOwner>
+        rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/UTP_Procedure#TestProcedureSetup>
+        rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/UTP_Process#TestCaseMain>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Provenance#approvedAt>
+        rdf:type            owl:DatatypeProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Provenance#approvedAt> .
+
+owl:Thing  rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Agent#isRoleOf>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#genericallyDependentOn> , <http://uaontologies.com/UA_Core/UA_Agent#isRoleOf> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Agent#hasRole> .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#Occurrent>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Agent#Procedure>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Information#describes>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Information#isAbout> , <http://uaontologies.com/UA_Core/UA_Information#describes> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Information#isDescribedBy> .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#isOccupiedBy>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#isOccupiedBy> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Foundation/UA_Foundation#occupies> .
+
+<http://uaontologies.com/UA_Core/UA_Agent#hasRole>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#hasGenericDependent> , <http://uaontologies.com/UA_Core/UA_Agent#hasRole> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Agent#isRoleOf> .
+
+<http://example.com/project/vocabulary/UTP_Data#conformsTo>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://example.com/project/vocabulary/UTP_Data#conformsTo> ;
+        owl:inverseOf       <http://example.com/project/vocabulary/UTP_Data#isConformedBy> .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#Site>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#Container>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#ContainedElement>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Measurement#hasValue>
+        rdf:type            owl:DatatypeProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Measurement#hasValue> .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#Role>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#Occupies>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Provenance#generatedBy>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Provenance#generatedBy> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Provenance#generates> .
+
+<http://uaontologies.com/UA_Core/UA_Measurement#SimpleMeasurement>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#specificallyDependentOn>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#specificallyDependentOn> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Foundation/UA_Foundation#hasSpecificDependent> .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier>
+        rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/UTP_Data#isConformedBy>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://example.com/project/vocabulary/UTP_Data#isConformedBy> ;
+        owl:inverseOf       <http://example.com/project/vocabulary/UTP_Data#conformsTo> .
+
+<http://uaontologies.com/UA_Core/UA_Event#isSiteOf>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Event#isSiteOf> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Event#occursAt> .
+
+<http://example.com/project/vocabulary/UTP_Configuration#TestItemConfiguration>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#SpecificallyDependentContinuant>
+        rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/UTP_Process#TestCaseArbitrationSpecification>
+        rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/UTP_Procedure#isRunBy>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://example.com/project/vocabulary/UTP_Procedure#isRunBy> ;
+        owl:inverseOf       <http://example.com/project/vocabulary/UTP_Procedure#runsOn> .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#Energy>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#ImmaterialEntity>
+        rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/UTP_Process#VerdictCalculationProcess>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Provenance#ApprovedBy>
+        rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/UTP_Procedure#TestProcedureElement>
+        rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/UTP_Data#isInformedBy>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://example.com/project/vocabulary/UTP_Data#isInformedBy> ;
+        owl:inverseOf       <http://example.com/project/vocabulary/UTP_Data#informs> .
+
+<http://uaontologies.com/UA_Core/UA_Location#locatedAt>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Location#locatedAt> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Location#isLocationOf> .
+
+<http://uaontologies.com/UA_Core/UA_Location#isLocationOf>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Location#isLocationOf> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Location#locatedAt> .
+
+<http://example.com/project/vocabulary/UTP_Process#TestCaseElement>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Measurement#Quantity>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Ownership#isOwnedBy>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Ownership#isOwnedBy> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Ownership#owns> .
+
+<http://example.com/project/vocabulary/UTP_Data#Informs>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Measurement#hasUnit>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Measurement#hasUnit> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Measurement#isUnitOf> .
+
+<http://uaontologies.com/UA_Core/UA_Measurement#HasUnit>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Information#prescribes>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Information#isAbout> , <http://uaontologies.com/UA_Core/UA_Information#prescribes> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Information#isPrescribedBy> .
+
+<http://uaontologies.com/UA_Core/UA_Agent#isPlannedTemporalRegionOf>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Agent#isPlannedTemporalRegionOf> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Agent#hasPlannedTemporalRegion> .
+
+<http://uaontologies.com/UA_Core/UA_Agent#ResponsibleFor>
+        rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/UTP_Process#TestCaseSetup>
+        rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/UTP_Configuration#TestItem>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#hasID>
+        rdf:type            owl:DatatypeProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#hasID> .
+
+<http://example.com/project/vocabulary/UTP_Process#InconclusiveVerdict>
+        rdf:type  owl:Class .
+
+<http://example.com/project/description/bundle/properties>
+        rdf:type         owl:Ontology ;
+        rdfs:comment     "Generated by Owl Reason 2.15.0" ;
+        owl:imports      <http://example.com/project/description/bundle> ;
+        owl:versionInfo  "1756590374" .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Measurement#isDimensionOf>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Measurement#isDimensionOf> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Measurement#hasDimension> .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Information#IsAbout>
+        rdf:type  owl:Class .
+
+rdf:Statement  rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Information#isDescribedBy>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Information#isSubjectOf> , <http://uaontologies.com/UA_Core/UA_Information#isDescribedBy> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Information#describes> .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#GenericallyDependentContinuant>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#Process>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Information#DescriptiveInformationEntity>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#TemporalRegion>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Information#Describes>
+        rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/UTP_Data#DataPartition>
+        rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/UTP_Process#TestSet>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Event#hasParticipant>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Event#hasParticipant> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Event#isParticipantOf> .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#hasEndInstant>
+        rdf:type            owl:DatatypeProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#hasEndInstant> .
+
+<http://uaontologies.com/UA_Core/UA_Measurement#hasLowerValue>
+        rdf:type            owl:DatatypeProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Measurement#hasLowerValue> .
+
+<http://uaontologies.com/UA_Core/UA_Measurement#hasUpperValue>
+        rdf:type            owl:DatatypeProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Measurement#hasUpperValue> .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#RealizableEntity>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Agent#hasOutput>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Agent#hasOutput> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Agent#isOutputOf> .
+
+<http://uaontologies.com/UA_Core/UA_Agent#Producer>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Foundation/UA_Foundation#occupies>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#occupies> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Foundation/UA_Foundation#isOccupiedBy> .
+
+<http://opencaesar.io/oml#hasTarget>
+        rdf:type  owl:ObjectProperty .
+
+<http://example.com/project/vocabulary/UTP_Data#DataItem>
+        rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/UTP_Procedure#TestProcedureTeardown>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Measurement#hasConfidence>
+        rdf:type            owl:DatatypeProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Measurement#hasConfidence> .
+
+<http://example.com/project/vocabulary/UTP_Process#NoneVerdict>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Measurement#measurementOf>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Information#describes> , <http://uaontologies.com/UA_Core/UA_Information#isAbout> , <http://uaontologies.com/UA_Core/UA_Measurement#measurementOf> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Measurement#measuredBy> .
+
+<http://example.com/project/vocabulary/UTP_Procedure#invokes>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://example.com/project/vocabulary/UTP_Procedure#invokes> ;
+        owl:inverseOf       <http://example.com/project/vocabulary/UTP_Procedure#isInvokedBy> .
+
+owl:Nothing  rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/UTP_Procedure#Invokes>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Agent#IsRoleOf>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Ownership#owns>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Ownership#owns> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Ownership#isOwnedBy> .
+
+<http://uaontologies.com/UA_Core/UA_Location#LocatedAt>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Agent#isResponsibilityOf>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Agent#isResponsibilityOf> ;
+        owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Agent#responsibleFor> .

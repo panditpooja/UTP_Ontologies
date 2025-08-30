@@ -1,0 +1,8 @@
+description bundle <http://example.com/project/description/bundle#> as ^bundle {
+	uses <http://example.com/project/vocabulary/bundle#>
+	
+	includes <http://example.com/project/description/UTP_Description_Process#>
+	includes <http://example.com/project/description/UTP_Description_Procedure#>
+	includes <http://example.com/project/description/UTP_Description_Data#>
+	includes <http://example.com/project/description/UTP_Description_Configuration#>
+}

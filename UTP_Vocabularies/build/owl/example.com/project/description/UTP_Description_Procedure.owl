@@ -1,0 +1,381 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://example.com/project/description/UTP_Description_Procedure#"
+     xml:base="http://example.com/project/description/UTP_Description_Procedure"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:oml="http://opencaesar.io/oml#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:UA_Foundation="http://uaontologies.com/UA_Foundation/UA_Foundation#"
+     xmlns:UTP_Procedure="http://example.com/project/vocabulary/UTP_Procedure#"
+     xmlns:UA_Information="http://uaontologies.com/UA_Core/UA_Information#"
+     xmlns:utp_desc_proced="http://example.com/project/description/UTP_Description_Procedure#">
+    <owl:Ontology rdf:about="http://example.com/project/description/UTP_Description_Procedure">
+        <owl:imports rdf:resource="http://example.com/project/description/UTP_Description_Configuration"/>
+        <owl:imports rdf:resource="http://example.com/project/description/UTP_Description_Process"/>
+        <owl:imports rdf:resource="http://example.com/project/vocabulary/UTP_Procedure"/>
+        <owl:imports rdf:resource="http://uaontologies.com/UA_Core/UA_Information"/>
+        <owl:imports rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation"/>
+        <oml:namespace rdf:resource="http://example.com/project/description/UTP_Description_Procedure#"/>
+        <oml:prefix>utp_desc_proced</oml:prefix>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Description"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://example.com/project/vocabulary/UTP_Procedure#runsOn -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.com/project/vocabulary/UTP_Procedure#runsOn"/>
+    
+
+
+    <!-- http://uaontologies.com/UA_Core/UA_Information#prescribes -->
+
+
+    <owl:ObjectProperty rdf:about="http://uaontologies.com/UA_Core/UA_Information#prescribes"/>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#contains -->
+
+
+    <owl:ObjectProperty rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#contains"/>
+    
+
+
+    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#isContainedIn -->
+
+
+    <owl:ObjectProperty rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#isContainedIn"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Procedure#catapultAccuracyProcedureMain -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Procedure#catapultAccuracyProcedureMain">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestProcedureMain"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Process#catapultAccuracyMain"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultProcLaunchAtTarget"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultAccuracyTestProcedure"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Procedure#catapultAccuracyProcedureSetup -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Procedure#catapultAccuracyProcedureSetup">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestProcedureSetup"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Process#catapultAccuracySetup"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultProcLoadProjectile"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultProcSetTargetDistance"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultAccuracyTestProcedure"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Procedure#catapultAccuracyProcedureTeardown -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Procedure#catapultAccuracyProcedureTeardown">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestProcedureTeardown"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Process#catapultAccuracyTeardown"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultProcRetrieveProjectile"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultAccuracyTestProcedure"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Procedure#catapultAccuracyTestProcedure -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Procedure#catapultAccuracyTestProcedure">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestProcedure"/>
+        <UTP_Procedure:runsOn rdf:resource="http://example.com/project/description/UTP_Description_Configuration#catapultAccuracyTestConfig"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Process#catapultAccuracyTest"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultAccuracyProcedureMain"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultAccuracyProcedureSetup"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultAccuracyProcedureTeardown"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Procedure#catapultLaunchSchedule -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Procedure#catapultLaunchSchedule">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestExecutionSchedule"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Process#catapultFullLaunchTestSuite"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultAccuracyTestProcedure"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultMassTestProcedure"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultRangeTestProcedure"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Procedure#catapultMassProcedureMain -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Procedure#catapultMassProcedureMain">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestProcedureMain"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Process#catapultMassMain"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultProcRecordMassReading"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultMassTestProcedure"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Procedure#catapultMassProcedureSetup -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Procedure#catapultMassProcedureSetup">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestProcedureSetup"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Process#catapultMassSetup"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultProcPlaceBallOnScale"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultMassTestProcedure"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Procedure#catapultMassProcedureTeardown -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Procedure#catapultMassProcedureTeardown">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestProcedureTeardown"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Process#catapultMassTeardown"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultProcRemoveBallFromScale"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultMassTestProcedure"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Procedure#catapultMassTestProcedure -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Procedure#catapultMassTestProcedure">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestProcedure"/>
+        <UTP_Procedure:runsOn rdf:resource="http://example.com/project/description/UTP_Description_Configuration#catapultMassTestConfig"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Process#catapultMassTest"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultMassProcedureMain"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultMassProcedureSetup"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultMassProcedureTeardown"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Procedure#catapultProcClearField -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Procedure#catapultProcClearField">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestActionProcedure"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Process#catapultClearField"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultRangeProcedureTeardown"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Procedure#catapultProcLaunchAndMeasure -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Procedure#catapultProcLaunchAndMeasure">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestActionProcedure"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Process#catapultLaunchAndMeasure"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultRangeProcedureMain"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Procedure#catapultProcLaunchAtTarget -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Procedure#catapultProcLaunchAtTarget">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestActionProcedure"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Process#catapultLaunchAtTarget"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultAccuracyProcedureMain"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Procedure#catapultProcLoadProjectile -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Procedure#catapultProcLoadProjectile">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestActionProcedure"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Process#catapultLoadProjectile"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultRangeProcedureSetup"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Procedure#catapultProcPlaceBallOnScale -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Procedure#catapultProcPlaceBallOnScale">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestActionProcedure"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Process#placeBallOnScale"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultMassProcedureSetup"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Procedure#catapultProcRecordMassReading -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Procedure#catapultProcRecordMassReading">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestActionProcedure"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Process#recordMassReading"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultMassProcedureMain"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Procedure#catapultProcRemoveBallFromScale -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Procedure#catapultProcRemoveBallFromScale">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestActionProcedure"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Process#removeBallFromScale"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultMassProcedureTeardown"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Procedure#catapultProcRetrieveProjectile -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Procedure#catapultProcRetrieveProjectile">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestActionProcedure"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Process#catapultRetrieveProjectile"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultAccuracyProcedureTeardown"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Procedure#catapultProcSetProjectileAngle -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Procedure#catapultProcSetProjectileAngle">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestActionProcedure"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Process#catapultSetProjectileAngle"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultRangeProcedureSetup"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Procedure#catapultProcSetTargetDistance -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Procedure#catapultProcSetTargetDistance">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestActionProcedure"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Process#catapultSetTargetDistance"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultAccuracyProcedureSetup"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Procedure#catapultRangeProcedureMain -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Procedure#catapultRangeProcedureMain">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestProcedureMain"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Process#catapultMeasureRangeMain"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultProcLaunchAndMeasure"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultRangeTestProcedure"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Procedure#catapultRangeProcedureSetup -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Procedure#catapultRangeProcedureSetup">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestProcedureSetup"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Process#catapultMeasureRangeSetup"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultProcLoadProjectile"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultProcSetProjectileAngle"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultRangeTestProcedure"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Procedure#catapultRangeProcedureTeardown -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Procedure#catapultRangeProcedureTeardown">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestProcedureTeardown"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Process#catapultMeasureRangeTeardown"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultProcClearField"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultRangeTestProcedure"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/UTP_Description_Procedure#catapultRangeTestProcedure -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/UTP_Description_Procedure#catapultRangeTestProcedure">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/UTP_Procedure#TestProcedure"/>
+        <UTP_Procedure:runsOn rdf:resource="http://example.com/project/description/UTP_Description_Configuration#catapultRangeTestConfig"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/UTP_Description_Process#catapultRangeTest"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultRangeProcedureMain"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultRangeProcedureSetup"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/UTP_Description_Procedure#catapultRangeProcedureTeardown"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.5.0.2023-01-14T12:41:38Z) https://github.com/owlcs/owlapi/ -->
+
+

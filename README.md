@@ -1,4 +1,13 @@
-# An Ontological Representation of the UML Testing Profile(UTP) for Digital Test and Evaluation
+# An Ontological Representation of the UML Testing Profile (UTP) for Digital Test and Evaluation  
+
+![Digital Engineering](https://img.shields.io/badge/Digital%20Engineering-blue?style=for-the-badge)
+![Data Engineering](https://img.shields.io/badge/Data%20Engineering-green?style=for-the-badge)
+![Systems Engineering](https://img.shields.io/badge/Systems%20Engineering-orange?style=for-the-badge)
+![OML](https://img.shields.io/badge/OML-lightgrey?style=for-the-badge)
+![Rosetta Tool](https://img.shields.io/badge/Rosetta%20Tool-purple?style=for-the-badge)
+![Ontology](https://img.shields.io/badge/Ontology-red?style=for-the-badge)
+![Semantics](https://img.shields.io/badge/Semantics-yellow?style=for-the-badge)
+![Java](https://img.shields.io/badge/Java-red?style=for-the-badge&logo=java)
 
 This repository contains the ontological representation of the **UML Testing Profile (UTP) v2.1** using the **Ontological Modeling Language (OML)**.  
 It accompanies the research paper *"An Ontological Representation of the UML Testing Profile for Digital Test and Evaluation"*.
@@ -30,7 +39,7 @@ This project:
 ```
 
 ---
-## The Ontology Stack
+## 📚 The Ontology Stack
 
 These UTP ontologies are designed to be mapped to the foundation and core ontologies within the **University of Arizona Ontology Stack (UAOS)**. This layered approach ensures that the UTP models are interoperable with other domain ontologies built on the same stack, promoting consistency and cross-domain analysis.
 
@@ -40,7 +49,7 @@ These UTP ontologies are designed to be mapped to the foundation and core ontolo
 
 ### Requirements
 - [OML Rosetta](https://github.com/opencaesar/oml-rosetta)  
-- Java 11+  
+- Java JDK 20+ (Latest version used by this project Java JDK 21)  
 - Git  
 
 ### Clone the repo

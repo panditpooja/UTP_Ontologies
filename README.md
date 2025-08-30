@@ -20,13 +20,19 @@ This project:
 ## 📂 Repository Structure
 ```
 📁 UTP_Ontologies
- ├── processes/         # Ontology for processes (TestCase, TestAction, VerdictCalculation)
- ├── procedures/        # Ontology for procedures (TestProcedure, ExecutionSchedule)
- ├── configurations/    # Ontology for test configurations
- ├── data/              # Ontology for test data and datasets
- ├── examples/          # Catapult test case study with OML instances
- └── queries/           # SPARQL queries (Shared Component Check, Verdict Check, Quality Check)
+├── UTP_Vocabularies/         # The OML Rosetta project root
+│   └── src/
+│       ├── oml/example.com/project/
+│       │   ├── description/  # OML description files (e.g., Catapult instance data)
+│       │   └── vocabulary/   # OML vocabulary files (the UTP Test ontologies)
+│       └── sparql/           # Example SPARQL query files
+└── README.md
 ```
+
+---
+## The Ontology Stack
+
+These UTP ontologies are designed to be mapped to the foundation and core ontologies within the **University of Arizona Ontology Stack (UAOS)**. This layered approach ensures that the UTP models are interoperable with other domain ontologies built on the same stack, promoting consistency and cross-domain analysis.
 
 ---
 
@@ -39,7 +45,7 @@ This project:
 
 ### Clone the repo
 ```bash
-git clone https://github.com/YourUsername/UTP_Ontologies.git
+git clone https://github.com/panditpooja/UTP_Ontologies.git
 cd UTP_Ontologies
 ```
 
@@ -47,7 +53,7 @@ cd UTP_Ontologies
 You can load the OML files in **OML Rosetta** to run consistency checks and explore the ontology.
 
 ### Running SPARQL Queries
-Queries are provided under `/queries`. They can be executed with any standard SPARQL processor against the exported dataset.
+Queries are provided under `/queries`.
 
 ---
 
@@ -60,7 +66,7 @@ The **catapult test dataset** illustrates how UTP ontologies can:
 ---
 <!--
 ## 📜 Citation
-If you use this work in your research, please cite:
+If you use the artifacts or concepts from this work in your research, please cite our paper.
 
 > P. Pandit, J. Gregory, H. Fiore, and A. Salado,  
 > *"An Ontological Representation of the UML Testing Profile for Digital Test and Evaluation,"* 2025.  
@@ -69,7 +75,7 @@ If you use this work in your research, please cite:
 -->
 
 ## 🤝 Acknowledgements
-This work was supported by the **Systems Engineering Research Center (SERC)**, a UARC at Stevens Institute of Technology.
+This research has been supported by the **Systems Engineering Research Center (SERC)**, a University Affiliated Research Center (UARC) housed at Stevens Institute of Technology.
 
 ---
 
